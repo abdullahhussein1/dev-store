@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function ThemeSwitcher() {
   return (
-    <div className="group-hover:bg-background bg-secondary dark:bg-secondary/30 border rounded-full text-foreground/60 w-fit">
+    <div className="h-fit w-fit rounded-full border bg-secondary text-foreground/60 group-hover:bg-background dark:bg-secondary/30">
       <ThemeButton Icon={Sun} themeTitle="light" />
       <ThemeButton Icon={Moon} themeTitle="dark" />
       <ThemeButton Icon={Laptop} themeTitle="system" />
@@ -41,8 +41,8 @@ function ThemeButton({
             variant="ghost"
             size="sm"
             className={cn(
-              "rounded-full [&_svg]:size-3 size-6 p-0 border border-transparent hover:text-foreground hover:bg-transparent hover:rotate-6 transition-transform",
-              theme == themeTitle && "text-foreground border-foreground/20"
+              "size-6 rounded-full border border-transparent p-0 transition-transform hover:rotate-6 hover:bg-transparent hover:text-foreground [&_svg]:size-3",
+              theme == themeTitle && "border-foreground/20 text-foreground",
             )}
             onClick={() => setTheme(themeTitle)}
           >
