@@ -2,18 +2,6 @@ import BlurFade from "@/components/ui/blur-fade";
 import Marquee from "@/components/ui/marquee";
 import Image from "next/image";
 
-const ReviewCard = ({ src }: { src: string }) => {
-  return (
-    <Image
-      src="/stacks/nextjs-dark.svg"
-      alt="stack image"
-      className="w-32 px-2 md:w-44"
-      height="80"
-      width="100"
-    />
-  );
-};
-
 export function StackMarquee() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-12 bg-gradient-to-b from-background to-transparent py-12 md:shadow-xl">
