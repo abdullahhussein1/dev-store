@@ -13,7 +13,7 @@ export default function Home() {
       <div className="fixed top-0 z-50 h-16 w-full rounded-b-[40px] bg-background/10 backdrop-blur-sm"></div>
       <div className="absolute -left-12 -top-12 -z-10 h-[700px] w-[300px] -rotate-45 rounded-full bg-background blur-3xl dark:bg-secondary/30"></div>
       <Navbar />
-      <main className="flex flex-col items-center justify-center gap-32 p-8 pt-24">
+      <main className="flex flex-col items-center justify-center gap-20 p-8 pt-10 md:gap-32 md:pt-24">
         <div className="flex w-full flex-col items-start gap-4">
           <BlurFade className="text-5xl font-semibold lg:text-6xl">
             <AnimatedShinyText>Equip Yourself for Code</AnimatedShinyText>
@@ -51,7 +51,7 @@ export default function Home() {
               alt="dashboard"
               className="object-cover dark:hidden"
             />
-            <div className="absolute -bottom-10 -left-10 h-[400px] w-full bg-gradient-to-b from-transparent via-secondary to-secondary dark:via-background dark:to-background"></div>
+            <div className="absolute -bottom-10 -left-10 h-full w-full bg-gradient-to-b from-transparent via-secondary via-50% to-secondary dark:via-background dark:to-background"></div>
           </ShineBorder>
         </BlurFade>
       </main>
