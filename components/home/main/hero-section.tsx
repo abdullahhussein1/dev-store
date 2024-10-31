@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col gap-20 md:gap-32">
+    <section className="flex flex-col gap-20 md:gap-28">
       <div className="flex w-full flex-col items-start gap-4">
         <BlurFade className="text-5xl font-semibold lg:text-6xl">
           Equip Yourself for Code
@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
       <BlurFade className="w-full" delay={0.5}>
         <ShineBorder
-          className="relative mx-4 h-fit w-fit translate-x-1/3 -rotate-[10deg] skew-x-[20deg] scale-150 p-0 text-center text-2xl font-bold capitalize xl:translate-x-12 xl:scale-125"
+          className="relative mx-4 h-fit w-fit translate-x-1/3 -rotate-[10deg] skew-x-[20deg] scale-150 overflow-clip p-0 text-center text-2xl font-bold capitalize sm:scale-125 xl:translate-x-12"
           duration={30}
           color="#999"
         >
@@ -45,8 +45,8 @@ export default function HeroSection() {
             alt="dashboard"
             className="object-cover dark:hidden"
           />
-          <div className="absolute h-full w-full bg-gradient-to-b from-transparent via-secondary via-80% to-secondary dark:via-background dark:to-background"></div>
-          <div className="absolute h-full w-full bg-gradient-to-r from-transparent via-secondary via-80% to-secondary dark:via-background dark:to-background"></div>
+          <div className="absolute h-full w-full bg-gradient-to-b from-transparent via-secondary via-95% to-secondary dark:via-background dark:to-background"></div>
+          <div className="absolute h-full w-full bg-gradient-to-r from-transparent via-secondary via-95% to-secondary dark:via-background dark:to-background"></div>
         </ShineBorder>
       </BlurFade>
     </section>
