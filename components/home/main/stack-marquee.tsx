@@ -24,7 +24,6 @@ function StackImage({ src, alt, className }: StackImage) {
 
 export function StackMarquee({
   title = "Build With",
-  duration = "20s",
 }: StackMarqueeProps) {
   const stackImages = useMemo(
     () => [
