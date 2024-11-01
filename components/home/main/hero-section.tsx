@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col gap-20 md:gap-28">
       <div className="flex w-full flex-col items-start gap-4">
-        <BlurFade className="text-5xl font-semibold lg:text-6xl">
+        <BlurFade className="text-5xl font-bold lg:text-6xl">
           Equip Yourself for Code
         </BlurFade>
         <BlurFade
@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
       <BlurFade className="w-full" delay={0.5}>
         <ShineBorder
-          className="relative mx-4 h-fit w-fit translate-x-1/3 -rotate-[10deg] skew-x-[20deg] scale-150 overflow-clip p-0 text-center text-2xl font-bold capitalize sm:scale-125 xl:translate-x-12"
+          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 overflow-clip p-0 text-center text-2xl font-bold capitalize sm:scale-125 md:translate-x-1/3 xl:translate-x-12"
           duration={30}
           color="#999"
         >
