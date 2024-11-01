@@ -1,3 +1,4 @@
+import { FeatureCards } from "@/components/home/main/feature-cards";
 import HeroSection from "@/components/home/main/hero-section";
 import { StackMarquee } from "@/components/home/main/stack-marquee";
 import Navbar from "@/components/home/navbar/navbar";
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <main className="flex max-w-screen-lg flex-col items-center justify-center gap-32 p-8 pt-12 md:mx-auto md:pt-20">
         <HeroSection />
+        <FeatureCards/>
         <StackMarquee title="Build With" />
       </main>
     </div>
