@@ -77,7 +77,7 @@ export function StackMarquee({
       <BlurFade className="z-10 text-3xl font-bold md:text-5xl">
         {title}
       </BlurFade>
-      <Marquee className={`[--duration:${duration}]`}>
+      <Marquee className={`[--duration:20s]`}>
         {stackImages.map((image, index) => (
           <StackImage key={index} {...image} />
         ))}
