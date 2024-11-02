@@ -70,14 +70,14 @@ export function StackMarquee() {
     <div className="relative flex w-full flex-col items-center justify-center gap-8 overflow-hidden py-8 md:gap-12">
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
-          Stack
+          Powered by Top-Tier Technology
         </BlurFade>
         <BlurFade
           delay={0.1}
           className="z-10 font-medium text-foreground/50 md:text-xl"
           inView
         >
-          Built with the latest tech stack to deliver a seamless,
+          Utilizing cutting-edge technologies for a seamless and
           high-performance shopping experience.
         </BlurFade>
       </div>

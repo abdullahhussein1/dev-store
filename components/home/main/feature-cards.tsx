@@ -15,7 +15,7 @@ export function FeatureCards() {
     <div className="relative flex w-full flex-col items-center justify-center gap-8 pb-8 md:gap-12">
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
-          Features
+          Crafted for Today's Developers
         </BlurFade>
         <BlurFade
           delay={0.1}
