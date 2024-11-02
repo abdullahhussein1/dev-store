@@ -32,15 +32,21 @@ export const metadata: Metadata = {
   authors: [
     { name: "Abdullah Hussein", url: "https://github.com/abdullahhussein1" },
   ],
+  creator: "Abdullah Hussein",
   publisher: "Dev Store",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-  bookmarks: ["dev store", "coding tools", "developer accessories"],
   category: "E-commerce, Development, Tools",
   classification: "Developer Essentials",
-  metadataBase: new URL("https://devstorekrd.vercel.app"),
 };
 
 export default function RootLayout({
