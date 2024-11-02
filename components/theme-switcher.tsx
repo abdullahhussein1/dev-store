@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function ThemeSwitcher() {
   return (
-    <div className="h-fit w-fit rounded-full border bg-secondary text-foreground/60 group-hover:bg-background dark:bg-secondary/30">
+    <div className="flex h-fit w-fit items-center rounded-full border bg-secondary/30 text-foreground/60 group-hover:bg-background dark:bg-secondary/30">
       <ThemeButton Icon={Sun} themeTitle="light" />
       <ThemeButton Icon={Moon} themeTitle="dark" />
       <ThemeButton Icon={Laptop} themeTitle="system" />
