@@ -4,6 +4,8 @@ import { useMemo } from "react";
 import Image from "next/image";
 import BlurFade from "@/components/ui/blur-fade";
 import Marquee from "@/components/ui/marquee";
+import { cn } from "@/lib/utils";
+import GridPattern from "@/components/ui/grid-pattern";
 
 interface StackImage {
   src: string;
@@ -79,6 +81,15 @@ export function StackMarquee() {
           high-performance shopping experience.
         </BlurFade>
       </div>
+      <GridPattern
+        width={20}
+        height={20}
+        x={-1}
+        y={-1}
+        className={cn(
+          "opacity-50 [mask-image:linear-gradient(to_bottom_right,transparent,white,transparent)] dark:opacity-10",
+        )}
+      />
       <BlurFade delay={0.2} inView>
         <Marquee
           className={`max-w-sm [--duration:20s] md:max-w-2xl lg:max-w-screen-md`}
