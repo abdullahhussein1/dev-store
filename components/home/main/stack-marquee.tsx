@@ -87,7 +87,7 @@ export function StackMarquee() {
         x={-1}
         y={-1}
         className={cn(
-          "opacity-50 [mask-image:linear-gradient(to_bottom_right,transparent,white,transparent)] dark:opacity-10",
+          "opacity-40 [mask-image:linear-gradient(to_bottom_right,transparent,white,transparent)] dark:opacity-20",
         )}
       />
       <BlurFade delay={0.2} inView>
