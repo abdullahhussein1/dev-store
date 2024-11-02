@@ -92,7 +92,7 @@ export function StackMarquee() {
       />
       <BlurFade delay={0.2} inView>
         <Marquee
-          className={`max-w-sm [--duration:20s] md:max-w-2xl lg:max-w-screen-md`}
+          className={`max-w-[80vw] [--duration:20s] md:max-w-screen-sm lg:max-w-screen-md`}
         >
           {stackImages.map((image, index) => (
             <StackImage key={index} {...image} />
