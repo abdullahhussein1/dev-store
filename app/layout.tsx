@@ -20,7 +20,26 @@ export const metadata: Metadata = {
     default: "Dev Store",
   },
   description:
-    "Dev Store is crafted to provide a simple, fast, and intuitive shopping experience designed with developers in mind.",
+    "Discover top-tier tools, hardware, and accessories designed for developers. Dev Store offers a streamlined shopping experience tailored to coding professionals.",
+  keywords: [
+    "developer store",
+    "coding essentials",
+    "developer tools",
+    "hardware for coders",
+    "developer accessories",
+    "Dev Store",
+  ],
+  authors: [
+    { name: "Abdullah Hussein", url: "https://github.com/abdullahhussein1" },
+  ],
+  publisher: "Dev Store",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  bookmarks: ["dev store", "coding tools", "developer accessories"],
+  category: "E-commerce, Development, Tools",
+  classification: "Developer Essentials",
   metadataBase: new URL("https://devstorekrd.vercel.app"),
 };
 
