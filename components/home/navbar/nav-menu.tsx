@@ -11,45 +11,51 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Terminal } from "lucide-react";
 
-const components: { title: string; href: string; description: string }[] = [
+interface Component {
+  title: string;
+  href: string;
+  description: string;
+}
+
+const components: Component[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Marketplace",
+    href: "/features/marketplace",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "An all-in-one platform where users can browse, buy, and sell products or services.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Security",
+    href: "/features/security",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Top-tier protection measures to ensure the safety of user data and transactions.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Performance",
+    href: "/features/performance",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Lightning-fast response times and optimized processes for a smooth user experience.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Community",
+    href: "/features/community",
+    description:
+      "A thriving ecosystem of users, fostering engagement and collaboration.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Global Reach",
+    href: "/features/global-reach",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Expand your horizons with worldwide accessibility and multi-language support.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "24/7 Availability",
+    href: "/features/availability",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Round-the-clock access to services, ensuring convenience for users in all time zones.",
   },
 ];
 
@@ -69,12 +75,11 @@ export function NavMenu() {
                   >
                     <Terminal className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Dev Store
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                      Dev Store is Crafted for a Fast, Intuitive, and
+                      Developer-Centric Shopping Experience.
                     </p>
                   </Link>
                 </NavigationMenuLink>
@@ -82,17 +87,17 @@ export function NavMenu() {
               <ListItem href="/docs" title="Introduction">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/docs/installation" title="Features">
+                Explore the powerful capabilities of our developer tools.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/docs/primitives/typography" title="Stacks">
+                Discover the cutting-edge technologies powering our products.
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Features</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -106,13 +111,6 @@ export function NavMenu() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
-          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
