@@ -95,15 +95,15 @@ export function FeatureCards() {
                     <CardContent className="flex flex-1 items-center justify-center rounded-3xl p-2">
                       <item.icon
                         strokeWidth={1.5}
-                        className="size-24 fill-background/80 text-foreground/90 transition-all dark:fill-secondary/80"
+                        className="size-24 fill-background/80 text-foreground/80 transition-all group-hover:text-foreground/90 dark:fill-secondary/80"
                       />
                     </CardContent>
-                    <CardFooter className="flex items-center justify-between text-lg font-medium text-foreground/80">
+                    <CardFooter className="flex items-center justify-between text-lg font-medium text-foreground/80 group-hover:text-foreground/90">
                       <p>{item.title}</p>
                       <Button
                         size="icon"
                         variant="outline"
-                        className="aspect-square rounded-full border-2 bg-background/70 group-hover:bg-background dark:group-hover:bg-secondary"
+                        className="aspect-square rounded-full border-2 bg-background/60 group-hover:bg-background dark:group-hover:bg-secondary"
                       >
                         <Plus />
                       </Button>
@@ -118,7 +118,7 @@ export function FeatureCards() {
         </Carousel>
         <div className="absolute -right-2 top-0 z-10 h-full w-6 bg-background/80 blur-md" />
       </div>
-      <div className="absolute h-[750px] w-[100vw] bg-gradient-to-b from-transparent via-background via-70% to-transparent dark:via-secondary/20 md:h-[850px]" />
+      <div className="absolute h-[750px] w-[100vw] bg-gradient-to-b from-transparent via-background via-70% to-transparent dark:via-secondary/25 md:h-[850px]" />
     </div>
   );
 }
