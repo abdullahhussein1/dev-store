@@ -5,10 +5,62 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import BlurFade from "@/components/ui/blur-fade";
-import { Plus, Settings2 } from "lucide-react";
+import {
+  Clock,
+  Globe,
+  LucideIcon,
+  Plus,
+  ShieldCheck,
+  ShoppingCart,
+  Users,
+  Zap,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+type Feature = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const featuresItems: Feature[] = [
+  {
+    title: "All-in-One Marketplace",
+    description: "Find everything you need in one convenient location.",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Top-Tier Security",
+    description:
+      "Your data and transactions are protected with state-of-the-art security measures.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Lightning-Fast Performance",
+    description: "Experience blazing speeds with our optimized platform.",
+    icon: Zap,
+  },
+  {
+    title: "Community-Driven",
+    description: "Join a thriving community of users and sellers.",
+    icon: Users,
+  },
+  {
+    title: "Global Reach",
+    description: "Connect with customers and sellers from around the world.",
+    icon: Globe,
+  },
+  {
+    title: "24/7 Availability",
+    description:
+      "Shop or sell anytime, day or night, with round-the-clock access.",
+    icon: Clock,
+  },
+];
 
 export function FeatureCards() {
   return (
@@ -34,24 +86,24 @@ export function FeatureCards() {
         >
           <BlurFade delay={0.2} inView>
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
+              {featuresItems.map((item) => (
                 <CarouselItem
-                  key={index}
-                  className="group cursor-pointer transition-all dark:hover:brightness-105"
+                  key={item.title}
+                  className="group cursor-pointer transition-all"
                 >
-                  <Card className="flex h-[350px] w-[300px] flex-col gap-3 overflow-clip rounded-[35px] border-none bg-secondary p-3 pb-1 dark:bg-background">
-                    <CardContent className="flex flex-1 items-center justify-center rounded-3xl bg-background p-2 dark:bg-secondary/20">
-                      <Settings2
-                        size={88}
-                        className="fill-border text-foreground/20 transition-all group-hover:text-foreground/40"
+                  <Card className="flex h-[350px] w-[300px] flex-col gap-3 overflow-clip rounded-[35px] border-none bg-secondary p-3 pb-1 group-hover:bg-secondary/60 dark:bg-background dark:group-hover:bg-background/70">
+                    <CardContent className="flex flex-1 items-center justify-center rounded-3xl p-2">
+                      <item.icon
+                        strokeWidth={1.5}
+                        className="size-24 fill-background/80 text-foreground/90 transition-all dark:fill-secondary/80"
                       />
                     </CardContent>
                     <CardFooter className="flex items-center justify-between text-lg font-medium text-foreground/80">
-                      <p>All-in-One Place</p>
+                      <p>{item.title}</p>
                       <Button
                         size="icon"
                         variant="outline"
-                        className="aspect-square rounded-full bg-background/80 group-hover:bg-background dark:group-hover:bg-secondary"
+                        className="aspect-square rounded-full border-2 bg-background/70 group-hover:bg-background dark:group-hover:bg-secondary"
                       >
                         <Plus />
                       </Button>
@@ -60,11 +112,13 @@ export function FeatureCards() {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
           </BlurFade>
         </Carousel>
-        <div className="absolute -right-2 top-0 z-10 h-full w-8 bg-background blur-md" />
+        <div className="absolute -right-2 top-0 z-10 h-full w-6 bg-background/80 blur-md" />
       </div>
-      <div className="absolute h-[650px] w-[100vw] bg-gradient-to-b from-transparent via-background via-70% to-transparent dark:via-secondary/20 md:h-[700px]" />
+      <div className="absolute h-[750px] w-[100vw] bg-gradient-to-b from-transparent via-background via-70% to-transparent dark:via-secondary/20 md:h-[850px]" />
     </div>
   );
 }
