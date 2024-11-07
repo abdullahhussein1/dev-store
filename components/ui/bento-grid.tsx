@@ -37,15 +37,15 @@ const BentoCard = ({
     className={cn(
       "group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-3xl",
       // light styles
-      "border bg-background font-semibold text-foreground/80 hover:text-foreground",
+      "bg-background/80 font-semibold text-foreground/80 hover:text-foreground",
       // dark styles
-      "dark:bg-secondary/20",
+      "dark:bg-secondary/30",
       className,
     )}
   >
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2">
-      <div className="flex size-12 items-center justify-center rounded-sm border bg-secondary p-1 dark:bg-secondary/40">
-        <Icon className="size-8 fill-background" />
+      <div className="flex size-12 items-center justify-center rounded-sm border bg-secondary/70 p-1 dark:bg-secondary/40">
+        <Icon className="size-8 fill-background/70" />
       </div>
       <h3 className="text-xl font-semibold text-foreground">{name}</h3>
       <p className="text-sm text-foreground/60">{description}</p>

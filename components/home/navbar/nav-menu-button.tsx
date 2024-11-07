@@ -37,7 +37,6 @@ const features = [
     href: "#features",
 
     description: "Explore the powerful capabilities of our developer tools.",
-    className: "row-span-2",
   },
   {
     Icon: Layers2,
@@ -45,6 +44,7 @@ const features = [
     name: "Stacks",
     description:
       "Discover the cutting-edge technologies powering our products.",
+    className: "col-span-2",
   },
 ];
 
