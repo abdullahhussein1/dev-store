@@ -67,7 +67,10 @@ export function StackMarquee() {
   );
 
   return (
-    <div className="relative flex w-full flex-col items-center justify-center gap-8 overflow-hidden py-8 md:gap-12">
+    <div
+      id="stacks"
+      className="relative flex w-full flex-col items-center justify-center gap-8 overflow-hidden py-8 md:gap-12"
+    >
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
           Powered by Top-Tier Technology

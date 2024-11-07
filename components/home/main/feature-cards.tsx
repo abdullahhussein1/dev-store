@@ -13,13 +13,11 @@ import {
   Clock,
   Globe,
   LucideIcon,
-  Plus,
   ShieldCheck,
   ShoppingCart,
   Users,
   Zap,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 type Feature = {
   title: string;
@@ -64,7 +62,10 @@ const featuresItems: Feature[] = [
 
 export function FeatureCards() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center gap-8 pb-8 md:gap-12">
+    <div
+      id="features"
+      className="relative flex w-full flex-col items-center justify-center gap-8 pb-8 md:gap-12"
+    >
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
           Crafted for Today's Developers

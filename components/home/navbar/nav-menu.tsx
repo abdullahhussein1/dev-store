@@ -63,7 +63,7 @@ export function NavMenu() {
   return (
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="text-foreground/70 hover:text-foreground">
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -84,19 +84,16 @@ export function NavMenu() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Features">
+              <ListItem href="#features" title="Features">
                 Explore the powerful capabilities of our developer tools.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Stacks">
+              <ListItem href="#stacks" title="Stacks">
                 Discover the cutting-edge technologies powering our products.
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="text-foreground/70 hover:text-foreground">
           <NavigationMenuTrigger>Features</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">

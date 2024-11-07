@@ -1,7 +1,6 @@
 import { Terminal } from "lucide-react";
-import Link from "next/link";
 import React from "react";
-import GitHubIcon, { GithubButton } from "../github-icon";
+import { GithubButton } from "../github-icon";
 
 export default function Footer() {
   return (
