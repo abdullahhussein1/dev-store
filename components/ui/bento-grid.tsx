@@ -11,7 +11,7 @@ const BentoGrid = ({
 }) => {
   return (
     <div
-      className={cn("grid w-full grid-cols-2 grid-rows-2 gap-3 p-3", className)}
+      className={cn("grid w-full grid-cols-2 grid-rows-2 gap-4 p-3", className)}
     >
       {children}
     </div>
@@ -34,8 +34,9 @@ const BentoCard = ({
   <Link
     href={href}
     key={name}
+    draggable="false"
     className={cn(
-      "group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-3xl",
+      "group relative col-span-1 flex select-none flex-col justify-between overflow-hidden rounded-3xl backdrop-blur-md",
       // light styles
       "bg-background/80 font-semibold text-foreground/80 hover:text-foreground",
       // dark styles
@@ -56,7 +57,6 @@ const BentoCard = ({
         "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
       )}
     ></div>
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </Link>
 );
 

@@ -3,18 +3,21 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import MenuIcon from "@/components/menu-icon";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Layers2, SquareTerminal, Star } from "lucide-react";
+import { Layers2, Star, Terminal } from "lucide-react";
 
 export default function NavMenuButton() {
   const isMobile = useIsMobile();
 
-  if (!isMobile) return;
+  if (!isMobile)
+    return (
+      <MenuIcon className="text-foreground/50 hover:text-foreground md:hidden" />
+    );
   return (
     <Drawer>
       <DrawerTrigger className="md:hidden">
         <MenuIcon className="text-foreground/50 hover:text-foreground" />
       </DrawerTrigger>
-      <DrawerContent className="rounded-[30px]">
+      <DrawerContent className="p-5">
         <MenuList />
       </DrawerContent>
     </Drawer>
@@ -25,7 +28,7 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 
 const features = [
   {
-    Icon: SquareTerminal,
+    Icon: Terminal,
     name: "Dev Store",
     href: "/",
     description:
