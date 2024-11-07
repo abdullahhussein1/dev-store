@@ -87,10 +87,7 @@ export function FeatureCards() {
           <BlurFade delay={0.2} inView>
             <CarouselContent>
               {featuresItems.map((item) => (
-                <CarouselItem
-                  key={item.title}
-                  className="group cursor-pointer transition-all"
-                >
+                <CarouselItem key={item.title} className="group transition-all">
                   <Card className="flex h-[350px] w-[300px] flex-col gap-3 overflow-clip rounded-[35px] border-none bg-secondary p-3 pb-1 group-hover:bg-secondary/60 dark:bg-background dark:group-hover:bg-background/70">
                     <CardContent className="flex flex-1 items-center justify-center rounded-3xl p-2">
                       <item.icon
@@ -98,15 +95,8 @@ export function FeatureCards() {
                         className="size-24 fill-background/80 text-foreground/80 transition-all group-hover:text-foreground/90 dark:fill-secondary/80"
                       />
                     </CardContent>
-                    <CardFooter className="flex items-center justify-between text-lg font-medium text-foreground/80 group-hover:text-foreground/90">
+                    <CardFooter className="flex items-center justify-between text-xl font-medium text-foreground/80 group-hover:text-foreground/90">
                       <p>{item.title}</p>
-                      <Button
-                        size="icon"
-                        variant="outline"
-                        className="aspect-square rounded-full border-2 bg-background/60 group-hover:bg-background dark:group-hover:bg-secondary"
-                      >
-                        <Plus />
-                      </Button>
                     </CardFooter>
                   </Card>
                 </CarouselItem>
