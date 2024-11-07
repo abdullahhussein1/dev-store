@@ -1,7 +1,7 @@
 import { Terminal } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import GitHubIcon from "../GitHubIcon";
+import GitHubIcon, { GithubButton } from "../github-icon";
 
 export default function Footer() {
   return (
@@ -19,9 +19,7 @@ export default function Footer() {
           A Palestine 🇵🇸 and Sudan 🇸🇩 Supporter
         </Link>
       </p>
-      <Link href="https://github.com/abdullahhussein1/dev-store">
-        <GitHubIcon className="text-foreground/90 hover:text-foreground" />
-      </Link>
+      <GithubButton />
     </footer>
   );
 }

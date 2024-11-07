@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-export default function GitHubIcon({
+export default function GithubIcon({
   className,
 }: {
   className?: string | undefined;
@@ -36,5 +37,20 @@ export default function GitHubIcon({
         </g>
       </g>
     </svg>
+  );
+}
+
+export function GithubButton({
+  className,
+}: {
+  className?: string | undefined;
+}) {
+  return (
+    <Link
+      className={className}
+      href="https://github.com/abdullahhussein1/dev-store"
+    >
+      <GithubIcon className="text-foreground/50 hover:text-foreground" />
+    </Link>
   );
 }

@@ -4,28 +4,49 @@ import { Button } from "../../ui/button";
 import { NavMenu } from "./nav-menu";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import Link from "next/link";
-import GitHubIcon from "@/components/GitHubIcon";
+import GitHubIcon, { GithubButton } from "@/components/github-icon";
+import DevStoreLogoType from "@/components/dev-store-logotype";
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import Image from "next/image";
+import MenuIcon from "@/components/menu-icon";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-5 z-50 flex w-full max-w-screen-lg items-center justify-between rounded-2xl border border-border/60 bg-background/60 px-2 py-1 text-sm backdrop-blur-lg dark:bg-background/40 md:px-3">
-      <div className="flex items-center gap-2">
-        <Terminal strokeWidth={3} className="size-6 rounded-full border p-1" />
-        <p className="font-semibold">Dev Store</p>
-      </div>
+    <nav className="sticky top-5 z-50 flex h-12 w-full max-w-screen-lg items-center justify-between rounded-2xl border border-border/60 bg-background/60 px-2 py-1 text-sm backdrop-blur-lg dark:bg-background/40 md:px-3">
+      <DevStoreLogoType />
+      <NavMenu />
       <div className="flex items-center gap-3">
-        <NavMenu />
         <ThemeSwitcher />
-        <Link href="https://github.com/abdullahhussein1/dev-store">
-          <GitHubIcon className="text-foreground/50 hover:text-foreground" />
-        </Link>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-foreground/70 hover:text-foreground md:hidden"
-        >
-          <Menu />
-        </Button>
+        <GithubButton />
+        <Drawer>
+          <DrawerTrigger className="md:hidden">
+            <MenuIcon className="text-foreground/50 hover:text-foreground" />
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+              <DrawerDescription>
+                This action cannot be undone.
+              </DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+              <Button>Submit</Button>
+              <DrawerClose>
+                <Button variant="outline">Cancel</Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
       </div>
     </nav>
   );
