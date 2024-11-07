@@ -33,7 +33,7 @@ function ThemeButton({
 }) {
   const { theme, setTheme } = useTheme();
 
-  const storedTheme = localStorage.getItem("theme");
+  const storedTheme = localStorage.getItem("theme") || "";
 
   return (
     <TooltipProvider delayDuration={100}>
