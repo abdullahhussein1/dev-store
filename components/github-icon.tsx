@@ -46,11 +46,10 @@ export function GithubButton({
   className?: string | undefined;
 }) {
   return (
-    <Link
-      className={className}
-      href="https://github.com/abdullahhussein1/dev-store"
-    >
-      <GithubIcon className="text-foreground/50 hover:text-foreground" />
+    <Link href="https://github.com/abdullahhussein1/dev-store">
+      <GithubIcon
+        className={cn("text-foreground/50 hover:text-foreground", className)}
+      />
     </Link>
   );
 }

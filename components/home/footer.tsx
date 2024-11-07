@@ -10,16 +10,13 @@ export default function Footer() {
         <Terminal strokeWidth={3} className="size-5 rounded-full border p-1" />
         <p className="font-medium text-foreground/70">© 2024</p>
       </div>
-      <p className="font-medium text-foreground/70">
-        Developed by
-        <Link
-          href="https://github.com/abdullahhussein1"
-          className="px-1 font-semibold text-foreground/90 transition-all hover:text-foreground"
-        >
-          A Palestine 🇵🇸 and Sudan 🇸🇩 Supporter
-        </Link>
-      </p>
-      <GithubButton />
+      <div className="flex gap-1 font-medium text-foreground/70">
+        <p>Stands with</p>
+        <p className="font-semibold text-foreground/90 transition-all hover:text-foreground">
+          Palestine 🇵🇸 Sudan 🇸🇩 Syria 🇸🇾
+        </p>
+      </div>
+      <GithubButton className="p-px" />
     </footer>
   );
 }

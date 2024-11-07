@@ -10,13 +10,14 @@ export default function HeroSection() {
     <section className="flex flex-col gap-20 md:gap-28">
       <div className="flex w-full flex-col items-start gap-4">
         <BlurFade className="text-5xl font-bold lg:text-6xl">
-        Power Your Coding Journey
+          Power Your Coding Journey
         </BlurFade>
         <BlurFade
           className="flex flex-col gap-6 font-medium text-foreground/60 lg:text-xl"
           delay={0.25}
         >
-          Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.
+          Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric
+          Shopping Experience.
           <Link href="/dashboard">
             <ShinyButton>
               Get Started <ArrowRight />
@@ -26,7 +27,7 @@ export default function HeroSection() {
       </div>
       <BlurFade className="w-full" delay={0.5}>
         <ShineBorder
-          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 overflow-clip p-0 text-center text-2xl font-bold capitalize"
+          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 select-none overflow-clip p-0 text-center text-2xl font-bold capitalize"
           duration={30}
           color="#999"
         >

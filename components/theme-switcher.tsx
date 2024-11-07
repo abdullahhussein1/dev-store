@@ -33,6 +33,8 @@ function ThemeButton({
 }) {
   const { theme, setTheme } = useTheme();
 
+  const storedTheme = localStorage.getItem("theme");
+
   return (
     <TooltipProvider delayDuration={100}>
       <Tooltip>
@@ -42,7 +44,8 @@ function ThemeButton({
             size="sm"
             className={cn(
               "size-6 rounded-full border border-transparent p-0 transition-transform hover:rotate-6 hover:bg-transparent hover:text-foreground [&_svg]:size-3",
-              theme == themeTitle && "border-foreground/20 text-foreground",
+              (theme == themeTitle || storedTheme == themeTitle) &&
+                "border-foreground/20 text-foreground",
             )}
             onClick={() => setTheme(themeTitle)}
           >
