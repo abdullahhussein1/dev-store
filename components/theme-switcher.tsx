@@ -7,9 +7,14 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export function ThemeSwitcher() {
+export function ThemeSwitcher({ className }: { className?: string }) {
   return (
-    <div className="flex h-fit w-fit items-center rounded-full border bg-secondary/30 text-foreground/60 group-hover:bg-background dark:bg-secondary/30">
+    <div
+      className={cn(
+        "flex h-fit w-fit items-center rounded-full border bg-secondary/30 text-foreground/60 group-hover:bg-background dark:bg-secondary/30",
+        className,
+      )}
+    >
       <ThemeButton Icon={Sun} themeTitle="light" />
       <ThemeButton Icon={Moon} themeTitle="dark" />
       <ThemeButton Icon={Laptop} themeTitle="system" />
@@ -41,7 +46,7 @@ function ThemeButton({
             variant="ghost"
             size="sm"
             className={cn(
-              "size-6 rounded-full border border-transparent p-0 transition-transform hover:rotate-6 hover:bg-transparent hover:text-foreground [&_svg]:size-3",
+              "aspect-square size-5 rounded-full border border-transparent p-0 transition-all hover:bg-transparent hover:text-foreground [&_svg]:size-3",
               theme == themeTitle && "border-foreground/20 text-foreground",
             )}
             onClick={() => setTheme(themeTitle)}

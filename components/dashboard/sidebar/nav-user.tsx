@@ -5,7 +5,6 @@ import {
   Bell,
   ChevronsUpDown,
   CreditCard,
-  Languages,
   LogOut,
   Sparkles,
   SunMoon,
@@ -27,7 +26,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { ThemeSwitcher } from "../theme-switcher";
+import { ThemeSwitcher } from "../../theme-switcher";
 
 export function NavUser({
   user,
@@ -47,6 +46,7 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
+              tooltip={user.name}
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="h-8 w-8 rounded-lg">
@@ -102,16 +102,12 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem className="group flex justify-between">
-                <div className="flex gap-2">
+              <DropdownMenuItem className="group flex items-center justify-between">
+                <div className="flex items-center gap-2">
                   <SunMoon />
                   Theme
                 </div>
-                <ThemeSwitcher />
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Languages />
-                Language
+                <ThemeSwitcher className="[&_svg]:size-[11px]" />
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
