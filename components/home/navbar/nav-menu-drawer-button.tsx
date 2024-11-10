@@ -32,7 +32,7 @@ const features = [
     name: "Dev Store",
     href: "/",
     description:
-      "Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
+      "Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
     className: "aspect-square",
   },
   {
