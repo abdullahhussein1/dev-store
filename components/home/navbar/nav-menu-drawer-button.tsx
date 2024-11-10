@@ -5,17 +5,17 @@ import MenuIcon from "@/components/menu-icon";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Layers2, Star, Terminal } from "lucide-react";
 
-export default function NavMenuButton() {
+export default function NavMenuDrawerButton() {
   const isMobile = useIsMobile();
 
   if (!isMobile)
     return (
-      <MenuIcon className="text-foreground/50 hover:text-foreground md:hidden" />
+      <MenuIcon className="size-6 text-foreground/50 hover:text-foreground md:hidden" />
     );
   return (
     <Drawer>
       <DrawerTrigger className="md:hidden">
-        <MenuIcon className="text-foreground/50 hover:text-foreground" />
+        <MenuIcon className="size-6 text-foreground/50 hover:text-foreground" />
       </DrawerTrigger>
       <DrawerContent className="p-5">
         <MenuList />
@@ -33,13 +33,14 @@ const features = [
     href: "/",
     description:
       "Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
+    className: "aspect-square",
   },
   {
     Icon: Star,
     name: "Features",
     href: "#features",
-
     description: "Explore the powerful capabilities of our developer tools.",
+    className: "aspect-square",
   },
   {
     Icon: Layers2,

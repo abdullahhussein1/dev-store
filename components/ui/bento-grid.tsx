@@ -11,7 +11,10 @@ const BentoGrid = ({
 }) => {
   return (
     <div
-      className={cn("grid w-full grid-cols-2 grid-rows-2 gap-4 p-3", className)}
+      className={cn(
+        "mx-auto grid w-full max-w-screen-sm grid-cols-2 grid-rows-2 gap-6 p-8",
+        className,
+      )}
     >
       {children}
     </div>
@@ -36,27 +39,21 @@ const BentoCard = ({
     key={name}
     draggable="false"
     className={cn(
-      "group relative col-span-1 flex select-none flex-col justify-between overflow-hidden rounded-3xl backdrop-blur-md",
+      "group relative col-span-1 flex select-none flex-col justify-between overflow-hidden rounded-[35px] backdrop-blur-md",
       // light styles
-      "bg-background/80 font-semibold text-foreground/80 hover:text-foreground",
+      "bg-background/80 font-semibold text-foreground/90 hover:text-foreground",
       // dark styles
       "dark:bg-secondary/30",
       className,
     )}
   >
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2">
-      <div className="flex size-12 items-center justify-center rounded-sm border bg-secondary/70 p-1 dark:bg-secondary/40">
-        <Icon className="size-8 fill-background/70" />
+    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-5 transition-all duration-300">
+      <div className="flex size-10 items-center justify-center rounded-sm border bg-secondary/70 p-1 dark:bg-secondary/40 sm:size-11">
+        <Icon className="size-7 fill-background/70 sm:size-8" />
       </div>
-      <h3 className="text-xl font-semibold text-foreground">{name}</h3>
-      <p className="text-sm text-foreground/60">{description}</p>
+      <h3 className="text-lg sm:text-xl">{name}</h3>
+      <p className="text-xs text-foreground/60 sm:text-sm">{description}</p>
     </div>
-
-    <div
-      className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
-      )}
-    ></div>
   </Link>
 );
 
