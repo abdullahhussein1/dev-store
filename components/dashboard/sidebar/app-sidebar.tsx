@@ -14,15 +14,14 @@ import {
   Terminal,
 } from "lucide-react";
 
-import { NavFilters } from "@/components/dashboard/nav-filters";
-import { NavMain } from "@/components/dashboard/nav-main";
-import { NavUser } from "@/components/dashboard/nav-user";
-import { TeamSwitcher } from "@/components/dashboard/team-switcher";
+import { NavFilters } from "@/components/dashboard/sidebar/nav-filters";
+import { NavMain } from "@/components/dashboard/sidebar/nav-main";
+import { NavUser } from "@/components/dashboard/sidebar/nav-user";
+import { Header } from "@/components/dashboard/sidebar/sidabar-header";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
 
@@ -157,9 +156,7 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-      </SidebarHeader>
+      <Header />
       <SidebarContent>
         <NavMain items={data.main} />
         <NavFilters items={data.filters} />
