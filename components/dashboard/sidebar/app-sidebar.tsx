@@ -2,16 +2,15 @@
 
 import * as React from "react";
 import {
-  AudioWaveform,
   BookOpen,
   Bot,
-  Command,
+  Heart,
   Home,
+  LayoutGrid,
   Settings,
   Settings2,
   ShoppingCart,
   SquareTerminal,
-  Terminal,
 } from "lucide-react";
 
 import { NavFilters } from "@/components/dashboard/sidebar/nav-filters";
@@ -31,23 +30,6 @@ const data = {
     email: "abdullah@moon.dev",
     avatar: "/avatars/profile.jpeg",
   },
-  teams: [
-    {
-      name: "Dev Store",
-      logo: Terminal,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   main: [
     {
       name: "Home",
@@ -55,9 +37,19 @@ const data = {
       icon: Home,
     },
     {
+      name: "Categories",
+      url: "/categories",
+      icon: LayoutGrid,
+    },
+    {
       name: "Shopping Cart",
       url: "/shopping-cart",
       icon: ShoppingCart,
+    },
+    {
+      name: "Favourites",
+      url: "/favourites",
+      icon: Heart,
     },
     {
       name: "Settings",
