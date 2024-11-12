@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "auto-fill-300": "repeat(auto-fill, minmax(350px, 1fr))",
+        "auto-fit-300": "repeat(auto-fit, minmax(350px, 1fr))",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
