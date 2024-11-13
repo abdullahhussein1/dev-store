@@ -13,10 +13,10 @@ export default function ItemCart({ item }: { item: Item }) {
       <div className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl border border-secondary/70 bg-white">
         <Image
           src={item.images[0]}
-          width={1000}
-          height={1000}
+          width={100}
+          height={100}
           alt={item.title}
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <Button
@@ -39,10 +39,13 @@ export default function ItemCart({ item }: { item: Item }) {
             </Badge>
           ))}
         </div>
-        <ItemRatings rating={item.rating} />
+        <ItemRatings
+          rating={item.rating}
+          numberOfRatings={item.numberOfRatings}
+        />
         <div className="flex items-center gap-2">
           <p className="text-lg font-semibold">{item.price}</p>
-          <p className="text-sm text-foreground/50">
+          <p className="text-xs text-foreground/50">
             {item.stock} left in Stock
           </p>
         </div>
