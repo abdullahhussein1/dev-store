@@ -8,8 +8,12 @@ import { Heart } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-export default function page({ params }: { params: { id: string } }) {
-  const id = params.id;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id;
   const item: Item = itemsData.find((item) => item.id === id)!;
   return (
     <div className="flex w-full flex-col rounded-3xl bg-secondary/50 p-4">
@@ -53,8 +57,8 @@ export default function page({ params }: { params: { id: string } }) {
           </p>
         </div>
         <ItemSpecifications specifications={item.specifications} />
-        <Button className="w-full rounded-full font-bold">Add to Cart</Button>
       </div>
+      <Button className="w-full rounded-full font-bold">Add to Cart</Button>
     </div>
   );
 }
