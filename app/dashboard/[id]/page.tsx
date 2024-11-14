@@ -1,20 +1,19 @@
+import ItemRatings from "@/components/dashboard/item/item-ratings";
+import ItemSpecifications from "@/components/dashboard/item/item-specifications";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { itemsData } from "@/data/data";
 import { Item } from "@/types/types";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import ItemRatings from "./item-ratings";
-import ItemSpecifications from "./item-specifications";
-import Link from "next/link";
 
-export default function ItemCart({ item }: { item: Item }) {
+export default function page({ params }: { params: { id: string } }) {
+  const id = params.id;
+  const item: Item = itemsData.find((item) => item.id === id)!;
   return (
-    <div className="group relative flex h-full select-none items-center justify-center gap-2 rounded-3xl bg-secondary/50 p-2">
-      <Link
-        href={`/dashboard/${item.id}`}
-        className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl border border-secondary/70 bg-white"
-      >
+    <div className="flex w-full flex-col rounded-3xl bg-secondary/50 p-4">
+      <div className="flex basis-1/2 items-center justify-center overflow-clip rounded-3xl border border-secondary/70 bg-white">
         <Image
           src={item.images[0]}
           width={1000}
@@ -22,7 +21,7 @@ export default function ItemCart({ item }: { item: Item }) {
           alt={item.title}
           className="pointer-events-none h-auto w-11/12 object-cover transition-transform duration-500 group-hover:scale-105"
         />
-      </Link>
+      </div>
       <Button
         size="icon"
         variant="outline"
@@ -30,14 +29,9 @@ export default function ItemCart({ item }: { item: Item }) {
       >
         <Heart />
       </Button>
-      <div className="flex w-full basis-2/3 flex-col gap-1 p-2 text-foreground/90 transition-all group-hover:text-foreground">
+      <div className="flex basis-1/2 flex-col gap-1 px-4 py-6 text-foreground/90 transition-all group-hover:text-foreground">
         <div className="flex flex-wrap items-center gap-1">
-          <Link
-            href={`/dashboard/${item.id}`}
-            className="text-lg font-semibold"
-          >
-            {item.title}
-          </Link>
+          <div className="text-3xl font-semibold">{item.title}</div>
           {item.features.map((feature) => (
             <Badge
               key={feature}
@@ -59,6 +53,7 @@ export default function ItemCart({ item }: { item: Item }) {
           </p>
         </div>
         <ItemSpecifications specifications={item.specifications} />
+        <Button className="w-full rounded-full font-bold">Add to Cart</Button>
       </div>
     </div>
   );
