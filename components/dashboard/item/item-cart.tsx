@@ -16,7 +16,7 @@ export default function ItemCart({ item }: { item: Item }) {
           width={100}
           height={100}
           alt={item.title}
-          className="pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
+          className="pointer-events-none h-auto w-11/12 object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <Button
