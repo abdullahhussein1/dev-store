@@ -27,7 +27,7 @@ export default function Layout({
             <Separator orientation="vertical" className="mr-2 h-4" />
           </div>
         </header>
-        <main className="flex flex-1 p-4 pt-0">{children}</main>
+        <main className="flex h-fit p-4 pt-1">{children}</main>
       </SidebarInset>
     </SidebarProvider>
   );

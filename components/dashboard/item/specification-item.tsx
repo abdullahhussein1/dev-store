@@ -5,30 +5,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Key } from "@/types/types";
-import {
-  AppWindowMac,
-  Battery,
-  Camera,
-  Cpu,
-  HardDrive,
-  LucideIcon,
-  MemoryStick,
-  Microchip,
-  Monitor,
-  Weight,
-} from "lucide-react";
+import { iconMap } from "@/utils/utils";
 
-const iconMap: Record<Key, LucideIcon> = {
-  CPU: Cpu,
-  RAM: MemoryStick,
-  OS: AppWindowMac,
-  Storage: HardDrive,
-  Display: Monitor,
-  Battery: Battery,
-  Weight: Weight,
-  Camera: Camera,
-  GPU: Microchip,
-};
 export default function SpecificationItem({
   title,
   value,
