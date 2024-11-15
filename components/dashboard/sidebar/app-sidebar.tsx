@@ -10,7 +10,7 @@ import {
   Settings,
   Settings2,
   ShoppingCart,
-  SquareTerminal,
+  Store,
 } from "lucide-react";
 
 import { NavFilters } from "@/components/dashboard/sidebar/nav-filters";
@@ -37,42 +37,48 @@ const data = {
       icon: Home,
     },
     {
-      name: "Categories",
-      url: "/categories",
-      icon: LayoutGrid,
+      name: "Store",
+      url: "/dashboard/store",
+      icon: Store,
     },
     {
-      name: "Shopping Cart",
-      url: "/shopping-cart",
+      name: "My Cart",
+      url: "/dashboard/cart",
       icon: ShoppingCart,
     },
     {
-      name: "Favourites",
-      url: "/favourites",
-      icon: Heart,
+      name: "Categories",
+      url: "/dashboard/categories",
+      icon: LayoutGrid,
     },
     {
+      name: "Favourites",
+      url: "/dashboard/favourites",
+      icon: Heart,
+    },
+
+    {
       name: "Settings",
-      url: "/settings",
+      url: "/dashboard/settings",
       icon: Settings,
     },
   ],
   filters: [
     {
-      title: "Playground",
+      title: "Category",
       url: "#",
-      icon: SquareTerminal,
+      icon: LayoutGrid,
       items: [
         {
-          title: "History",
+          title: "Laptop",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Keyboard",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Mouse",
           url: "#",
         },
       ],

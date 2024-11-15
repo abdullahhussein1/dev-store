@@ -12,7 +12,7 @@ export default function ItemCart({ item }: { item: Item }) {
   return (
     <div className="group relative flex h-full select-none items-center justify-center gap-2 rounded-3xl bg-secondary/50 p-2">
       <Link
-        href={`/dashboard/items/${item.id}`}
+        href={`/dashboard/store/${item.id}`}
         className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl border border-secondary/70 bg-white"
       >
         <Image
@@ -33,7 +33,7 @@ export default function ItemCart({ item }: { item: Item }) {
       <div className="flex w-full basis-2/3 flex-col gap-1 p-2 text-foreground/90 transition-all group-hover:text-foreground">
         <div className="flex flex-wrap items-center gap-1">
           <Link
-            href={`/dashboard/items/${item.id}`}
+            href={`/dashboard/store/${item.id}`}
             className="text-lg font-semibold"
           >
             {item.title}

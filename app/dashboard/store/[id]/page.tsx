@@ -88,7 +88,7 @@ export default async function Page({
             );
           })}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 pt-2">
           <Button className="w-full rounded-full font-bold">Add to Cart</Button>{" "}
           <Button
             size="icon"

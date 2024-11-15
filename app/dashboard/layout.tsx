@@ -9,7 +9,10 @@ import { Separator } from "@radix-ui/react-separator";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: {
+    template: "%s | Dev Store",
+    default: "Dashboard",
+  },
 };
 
 export default function Layout({
