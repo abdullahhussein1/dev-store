@@ -27,26 +27,26 @@ export default function HeroSection() {
       </div>
       <BlurFade className="w-full" delay={0.5}>
         <ShineBorder
-          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 select-none overflow-clip p-0 text-center text-2xl font-bold capitalize"
+          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 select-none p-0 text-center text-2xl font-bold capitalize"
           duration={30}
           color="#999"
         >
           <Image
-            src="/dashboard2.png"
+            src="/images/dashboard-dark.png"
             height="900"
             width="1600"
-            alt="dashboard"
-            className="hidden object-cover dark:block"
+            alt="dashboard - dark"
+            className="hidden rounded-[8px] object-cover dark:block"
           />
           <Image
-            src="/dashboard-light.png"
+            src="/images/dashboard-light.png"
             height="900"
             width="1600"
-            alt="dashboard"
-            className="object-cover dark:hidden"
+            alt="dashboard - light"
+            className="rounded-[8px] object-cover dark:hidden"
           />
-          <div className="absolute h-full w-full bg-gradient-to-b from-transparent via-secondary via-95% to-secondary dark:via-background dark:to-background" />
-          <div className="absolute h-full w-full bg-gradient-to-r from-transparent via-secondary via-95% to-secondary dark:via-background dark:to-background" />
+          <div className="absolute -bottom-1 -left-1 h-full w-full bg-gradient-to-b from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
+          <div className="absolute h-full w-full bg-gradient-to-r from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
         </ShineBorder>
       </BlurFade>
     </section>
