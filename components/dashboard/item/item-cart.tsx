@@ -14,6 +14,7 @@ export default function ItemCart({ item }: { item: Item }) {
       <Link
         href={`/dashboard/store/${item.id}`}
         className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl bg-white"
+
       >
         <Image
           src={item.images[0]}

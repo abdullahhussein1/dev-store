@@ -2,6 +2,7 @@ import { Item, ItemCondition, ItemFeatureType } from "@/types/types";
 
 export const itemsData: Item[] = [
   {
+
     id: "M3acB00k",
     title: "MacBook Pro 16-inch",
     description: "Apple's high-end laptop with M1 Pro chip",
@@ -32,6 +33,7 @@ export const itemsData: Item[] = [
     brand: "Apple",
   },
   {
+
     id: "X7tR2pLm",
     title: "UltraBook Pro X1",
     description: "High-performance laptop for professionals",
