@@ -13,14 +13,15 @@ export default function ItemCart({ item }: { item: Item }) {
     <div className="group relative flex h-full select-none items-center justify-center gap-2 rounded-3xl bg-secondary/50 p-2">
       <Link
         href={`/dashboard/store/${item.id}`}
-        className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl border border-secondary/70 bg-white"
+        className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl bg-white"
+
       >
         <Image
           src={item.images[0]}
           width={1000}
           height={1000}
           alt={item.title}
-          className="pointer-events-none h-auto w-11/12 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="pointer-events-none h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </Link>
       <Button
