@@ -89,7 +89,9 @@ export default async function Page({
           })}
         </div>
         <div className="flex gap-2 pt-2">
-          <Button className="w-full rounded-full font-bold">Add to Cart</Button>{" "}
+          <Button className="w-full rounded-full bg-primary font-bold text-white hover:bg-indigo-700">
+            Add to Cart
+          </Button>{" "}
           <Button
             size="icon"
             variant="outline"

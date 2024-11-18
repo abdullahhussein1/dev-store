@@ -28,7 +28,7 @@ export function NavMain({
         {items.map((item) => (
           <SidebarMenuItem
             key={item.name}
-            className={cn(item.name === "Home" && "pb-2")}
+            className={cn(item.name === "Search" && "pb-2")}
           >
             <SidebarMenuButton
               tooltip={item.name}

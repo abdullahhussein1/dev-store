@@ -7,6 +7,7 @@ import {
   Heart,
   Home,
   LayoutGrid,
+  Search,
   Settings,
   Settings2,
   ShoppingCart,
@@ -35,6 +36,11 @@ const data = {
       name: "Home",
       url: "/dashboard",
       icon: Home,
+    },
+    {
+      name: "Search",
+      url: "/dashboard/search",
+      icon: Search,
     },
     {
       name: "Store",
