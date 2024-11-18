@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import {
   BadgeDollarSignIcon,
@@ -66,64 +67,64 @@ const categoryCardItems: DashboardCardType[] = [
   {
     content: "Keyboard",
     icon: Keyboard,
-    iconClassName: "text-red-400 fill-red-400/20 group-hover:text-red-400",
   },
   {
     content: "Hardware",
     icon: Cpu,
-    iconClassName:
-      "text-green-400 fill-green-400/20 group-hover:text-green-400",
   },
   {
     content: "Accessory",
     icon: Speaker,
-    iconClassName:
-      "text-yellow-400 fill-yellow-400/20 group-hover:text-yellow-400",
   },
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col gap-12">
-      <div className="flex flex-col gap-3">
-        <h1 className="text-2xl font-bold">Overview</h1>
-        <OverviewCardsWrapper />
-      </div>
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <h1 className="text-2xl font-bold">Categories</h1>
-          <Link href="/dashboard/categories">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-muted-foreground dark:hover:bg-secondary/40 md:text-base"
-            >
-              See All
-            </Button>
-          </Link>
-        </div>
-        <CategoriesCardsWrapper />
+      <OverviewCards />
+      <TopCategoriesCards />
+      <DotPattern className="opacity-15" />
+    </div>
+  );
+}
+
+function OverviewCards() {
+  return (
+    <div className="flex flex-col gap-3">
+      <h1 className="text-2xl font-bold">Overview</h1>
+      <div className="z-20 grid w-full grid-cols-3 grid-rows-2 gap-4">
+        {overviewCardItems.map((item) => (
+          <DashboardCard
+            key={item.title}
+            item={item}
+            className="text-2xl md:text-3xl"
+          />
+        ))}
       </div>
     </div>
   );
 }
 
-function OverviewCardsWrapper() {
+function TopCategoriesCards() {
   return (
-    <div className="grid w-full grid-cols-3 grid-rows-2 gap-3">
-      {overviewCardItems.map((item) => (
-        <DashboardCard item={item} className="text-2xl md:text-3xl" />
-      ))}
-    </div>
-  );
-}
-
-function CategoriesCardsWrapper() {
-  return (
-    <div className="grid w-full grid-cols-auto-fit-200 gap-5">
-      {categoryCardItems.map((item) => (
-        <DashboardCard variant="category" item={item} />
-      ))}
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center gap-2">
+        <h1 className="text-2xl font-bold">Top Categories</h1>
+        <Link href="/dashboard/categories">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-muted-foreground dark:hover:bg-secondary/40 md:text-base"
+          >
+            See All
+          </Button>
+        </Link>
+      </div>
+      <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-auto-fit-200">
+        {categoryCardItems.map((item) => (
+          <DashboardCard key={item.title} variant="category" item={item} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -140,7 +141,7 @@ function DashboardCard({
   return (
     <Card
       className={cn(
-        "group relative flex h-full flex-col gap-1.5 truncate rounded-3xl bg-secondary/30 p-3 text-xl transition-all hover:bg-secondary/50 dark:bg-secondary/20 dark:hover:bg-secondary/30 md:p-4",
+        "group relative flex h-full w-full flex-col gap-1.5 truncate rounded-3xl bg-secondary/30 p-3 text-xl backdrop-blur-xl transition-all hover:bg-secondary/50 dark:bg-secondary/20 dark:hover:bg-secondary/30 md:p-4",
         variant === "category" && "aspect-video",
         className,
         item.className,

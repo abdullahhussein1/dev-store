@@ -1,5 +1,4 @@
 import { AppSidebar } from "@/components/dashboard/sidebar/app-sidebar";
-import DotPattern from "@/components/ui/dot-pattern";
 
 import {
   SidebarInset,
