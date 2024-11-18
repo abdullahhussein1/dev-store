@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import {
   BadgeDollarSignIcon,
@@ -33,14 +32,14 @@ const overviewCardItems: DashboardCardType[] = [
     title: "My Cart",
     content: "4",
     icon: ShoppingCart,
-    className: "row-span-2",
+    className: "col-span-2 md:col-span-1 md:row-span-2 lg:row-span-1",
     iconClassName: "text-sky-400 fill-sky-400/20 group-hover:text-sky-400",
   },
   {
     title: "Favourites",
     content: "8",
     icon: Heart,
-    className: "col-span-2",
+    className: "md:col-span-2 lg:col-span-1",
     iconClassName: "text-red-400 fill-red-400/20 group-hover:text-red-400",
   },
   {
@@ -54,6 +53,7 @@ const overviewCardItems: DashboardCardType[] = [
     title: "Reviewed",
     content: "10",
     icon: Star,
+    className: "col-span-2 md:col-span-1 lg:col-span-1",
     iconClassName:
       "text-yellow-400 fill-yellow-400/20 group-hover:text-yellow-400",
   },
@@ -83,7 +83,6 @@ export default function Home() {
     <div className="flex flex-1 flex-col gap-12">
       <OverviewCards />
       <TopCategoriesCards />
-      <DotPattern className="opacity-15" />
     </div>
   );
 }
@@ -92,10 +91,10 @@ function OverviewCards() {
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-2xl font-bold">Overview</h1>
-      <div className="z-20 grid w-full grid-cols-3 grid-rows-2 gap-4">
-        {overviewCardItems.map((item) => (
+      <div className="grid w-full grid-cols-3 grid-rows-2 gap-3 lg:grid-cols-4 lg:grid-rows-1">
+        {overviewCardItems.map((item, index) => (
           <DashboardCard
-            key={item.title}
+            key={index}
             item={item}
             className="text-2xl md:text-3xl"
           />
@@ -120,9 +119,9 @@ function TopCategoriesCards() {
           </Button>
         </Link>
       </div>
-      <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-auto-fit-200">
-        {categoryCardItems.map((item) => (
-          <DashboardCard key={item.title} variant="category" item={item} />
+      <div className="grid w-full grid-cols-2 gap-3 md:grid-cols-auto-fit-200">
+        {categoryCardItems.map((item, index) => (
+          <DashboardCard key={index} variant="category" item={item} />
         ))}
       </div>
     </div>

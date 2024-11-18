@@ -10,11 +10,10 @@ import Link from "next/link";
 
 export default function ItemCart({ item }: { item: Item }) {
   return (
-    <div className="group relative flex h-full select-none items-center justify-center gap-2 rounded-3xl bg-secondary/50 p-2">
+    <div className="group relative flex h-full select-none items-center justify-center gap-2 rounded-3xl bg-secondary/50 p-2 backdrop-blur-xl">
       <Link
         href={`/dashboard/store/${item.id}`}
         className="flex aspect-square basis-1/3 items-center justify-center overflow-clip rounded-3xl bg-white"
-
       >
         <Image
           src={item.images[0]}

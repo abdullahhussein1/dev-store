@@ -24,7 +24,7 @@ export default async function Page({
   const id = (await params).id;
   const item: Item = itemsData.find((item) => item.id === id)!;
   return (
-    <div className="grid w-full grid-cols-auto-fit-300 rounded-[35px] bg-secondary/50 p-3">
+    <div className="grid w-full grid-cols-auto-fit-300 rounded-[35px] bg-secondary/50 p-3 backdrop-blur-xl">
       <Carousel className="max-h-min">
         <CarouselContent>
           {item.images.map((image, index) => (
@@ -46,7 +46,6 @@ export default async function Page({
           <CarouselNext className="static" />
         </div>
       </Carousel>
-
       <div className="flex flex-col gap-5 px-4 py-6 text-foreground transition-all">
         <div className="flex flex-wrap items-center gap-3">
           <div className="text-3xl font-bold">{item.title}</div>
@@ -89,9 +88,7 @@ export default async function Page({
           })}
         </div>
         <div className="flex gap-2 pt-2">
-          <Button className="w-full rounded-full bg-primary font-bold text-white hover:bg-indigo-700">
-            Add to Cart
-          </Button>{" "}
+          <Button className="w-full rounded-full font-bold">Add to Cart</Button>{" "}
           <Button
             size="icon"
             variant="outline"

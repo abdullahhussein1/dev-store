@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { ChevronRight, type LucideIcon } from "lucide-react";
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -16,26 +16,36 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function NavFilters({
   items,
 }: {
   items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
+    title: string;
+    url: string;
+    icon?: LucideIcon;
+    isActive?: boolean;
     items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+      title: string;
+      url: string;
+    }[];
+  }[];
 }) {
+  const pathname = usePathname();
+
   return (
-    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+    <SidebarGroup
+      className={cn(
+        "hidden group-data-[collapsible=icon]:hidden",
+        pathname === "/dashboard/store" && "block",
+      )}
+    >
       <SidebarGroupLabel>Filters</SidebarGroupLabel>
-      <SidebarMenu>
+      <SidebarMenu className="rounded-3xl border-2 border-sidebar-accent bg-sidebar-accent/50 p-2">
         {items.map((item) => (
           <Collapsible
             key={item.title}
@@ -56,9 +66,9 @@ export function NavFilters({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
+                        <Link href={subItem.url}>
                           <span>{subItem.title}</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}
@@ -69,5 +79,5 @@ export function NavFilters({
         ))}
       </SidebarMenu>
     </SidebarGroup>
-  )
+  );
 }
