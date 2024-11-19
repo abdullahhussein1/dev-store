@@ -5,6 +5,7 @@ import { type LucideIcon } from "lucide-react";
 import {
   SidebarGroup,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
@@ -34,13 +35,18 @@ export function NavMain({
             <SidebarMenuButton
               tooltip={item.name}
               asChild
-              className={cn(pathname === item.url && "bg-sidebar-accent")}
+              isActive={pathname === item.url}
             >
               <Link href={item.url}>
                 <item.icon />
                 <span>{item.name}</span>
               </Link>
             </SidebarMenuButton>
+            {["My Cart", "Favourites"].includes(item.name) && (
+              <SidebarMenuBadge className="text-muted-foreground">
+                4
+              </SidebarMenuBadge>
+            )}
           </SidebarMenuItem>
         ))}
       </SidebarMenu>
