@@ -47,7 +47,7 @@ export default function Layout({
           </Button>
         </header>
         <main className="z-30 flex h-fit p-4 pt-2">{children}</main>
-        <DotPattern className="opacity-20 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
+        <DotPattern className="fixed opacity-20 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
       </SidebarInset>
     </SidebarProvider>
   );
