@@ -31,7 +31,7 @@ export default function Layout({
           <SidebarTrigger />
           <Link
             href="/dashboard/search"
-            className="relative flex max-w-lg flex-1 rounded-[11px] border bg-secondary/20 px-2 py-1 ps-9 text-sm text-muted-foreground/80 transition-colors hover:bg-secondary/40"
+            className="relative mx-auto flex w-full max-w-lg flex-1 rounded-[11px] border bg-secondary/20 px-2 py-1 ps-9 text-sm text-muted-foreground/80 transition-colors hover:bg-secondary/40"
           >
             <p>Search</p>
             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3">

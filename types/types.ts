@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export enum ItemFeatureType {
   NEW = "New",
   BESTSELLER = "Bestseller",
@@ -69,4 +71,12 @@ export type Item = {
   totalSold: number;
   stock: number;
   brand: string;
+};
+
+export type DashboardCardType = {
+  title?: string;
+  content: string;
+  icon: LucideIcon;
+  className?: string;
+  iconClassName?: string;
 };

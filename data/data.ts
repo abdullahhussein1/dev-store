@@ -1,8 +1,12 @@
-import { Item, ItemCondition, ItemFeatureType } from "@/types/types";
+import {
+  DashboardCardType,
+  Item,
+  ItemCondition,
+  ItemFeatureType,
+} from "@/types/types";
 
 export const itemsData: Item[] = [
   {
-
     id: "M3acB00k",
     title: "MacBook Pro 16-inch",
     description: "Apple's high-end laptop with M1 Pro chip",
@@ -33,7 +37,6 @@ export const itemsData: Item[] = [
     brand: "Apple",
   },
   {
-
     id: "X7tR2pLm",
     title: "UltraBook Pro X1",
     description: "High-performance laptop for professionals",
@@ -372,5 +375,82 @@ export const itemsData: Item[] = [
     createdAt: new Date("2024-02-01"),
     stock: 150,
     brand: "CamTech",
+  },
+];
+
+import {
+  BadgeDollarSignIcon,
+  Cpu,
+  HardDrive,
+  Heart,
+  Keyboard,
+  Laptop,
+  Monitor,
+  Mouse,
+  ShoppingCart,
+  Speaker,
+  Star,
+} from "lucide-react";
+
+export const overviewCardItems: DashboardCardType[] = [
+  {
+    title: "My Cart",
+    content: "4",
+    icon: ShoppingCart,
+    className: "col-span-2 md:col-span-1 md:row-span-2 lg:row-span-1",
+    iconClassName: "text-sky-400 fill-sky-400/20 group-hover:text-sky-400",
+  },
+  {
+    title: "Favourites",
+    content: "8",
+    icon: Heart,
+    className: "md:col-span-2 lg:col-span-1",
+    iconClassName: "text-red-400 fill-red-400/20 group-hover:text-red-400",
+  },
+  {
+    title: "Purchased",
+    content: "21",
+    icon: BadgeDollarSignIcon,
+    iconClassName:
+      "text-green-400 fill-green-400/20 group-hover:text-green-400",
+  },
+  {
+    title: "Reviewed",
+    content: "10",
+    icon: Star,
+    className: "col-span-2 md:col-span-1 lg:col-span-1",
+    iconClassName:
+      "text-yellow-400 fill-yellow-400/20 group-hover:text-yellow-400",
+  },
+];
+
+export const categoryCardItems: DashboardCardType[] = [
+  {
+    content: "Laptop",
+    icon: Laptop,
+  },
+  {
+    content: "Keyboard",
+    icon: Keyboard,
+  },
+  {
+    content: "Hardware",
+    icon: Cpu,
+  },
+  {
+    content: "Accessory",
+    icon: Speaker,
+  },
+  {
+    content: "Mouse",
+    icon: Mouse,
+  },
+  {
+    content: "Desktop",
+    icon: Monitor,
+  },
+  {
+    content: "Desk",
+    icon: HardDrive,
   },
 ];

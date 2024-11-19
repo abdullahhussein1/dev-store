@@ -1,82 +1,13 @@
+import DashboardCard from "@/components/dashboard/dashboard.card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import {
-  BadgeDollarSignIcon,
-  Cpu,
-  Heart,
-  Keyboard,
-  Laptop,
-  LucideIcon,
-  ShoppingCart,
-  Speaker,
-  Star,
-} from "lucide-react";
+import { categoryCardItems, overviewCardItems } from "@/data/data";
+
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dashboard",
 };
-
-type DashboardCardType = {
-  title?: string;
-  content: string;
-  icon: LucideIcon;
-  className?: string;
-  iconClassName?: string;
-};
-
-const overviewCardItems: DashboardCardType[] = [
-  {
-    title: "My Cart",
-    content: "4",
-    icon: ShoppingCart,
-    className: "col-span-2 md:col-span-1 md:row-span-2 lg:row-span-1",
-    iconClassName: "text-sky-400 fill-sky-400/20 group-hover:text-sky-400",
-  },
-  {
-    title: "Favourites",
-    content: "8",
-    icon: Heart,
-    className: "md:col-span-2 lg:col-span-1",
-    iconClassName: "text-red-400 fill-red-400/20 group-hover:text-red-400",
-  },
-  {
-    title: "Purchased",
-    content: "21",
-    icon: BadgeDollarSignIcon,
-    iconClassName:
-      "text-green-400 fill-green-400/20 group-hover:text-green-400",
-  },
-  {
-    title: "Reviewed",
-    content: "10",
-    icon: Star,
-    className: "col-span-2 md:col-span-1 lg:col-span-1",
-    iconClassName:
-      "text-yellow-400 fill-yellow-400/20 group-hover:text-yellow-400",
-  },
-];
-
-const categoryCardItems: DashboardCardType[] = [
-  {
-    content: "Laptop",
-    icon: Laptop,
-  },
-  {
-    content: "Keyboard",
-    icon: Keyboard,
-  },
-  {
-    content: "Hardware",
-    icon: Cpu,
-  },
-  {
-    content: "Accessory",
-    icon: Speaker,
-  },
-];
 
 export default function Home() {
   return (
@@ -120,45 +51,10 @@ function TopCategoriesCards() {
         </Link>
       </div>
       <div className="grid w-full grid-cols-2 gap-3 md:grid-cols-auto-fit-200">
-        {categoryCardItems.map((item, index) => (
+        {categoryCardItems.slice(0, 4).map((item, index) => (
           <DashboardCard key={index} variant="category" item={item} />
         ))}
       </div>
     </div>
-  );
-}
-
-function DashboardCard({
-  item,
-  className,
-  variant = "default",
-}: {
-  item: DashboardCardType;
-  className?: string;
-  variant?: "default" | "category";
-}) {
-  return (
-    <Card
-      className={cn(
-        "group relative flex h-full w-full flex-col gap-1.5 truncate rounded-3xl bg-secondary/30 p-3 text-xl backdrop-blur-xl transition-all hover:bg-secondary/50 dark:bg-secondary/20 dark:hover:bg-secondary/30 md:p-4",
-        variant === "category" && "aspect-video",
-        className,
-        item.className,
-      )}
-    >
-      {item.title && (
-        <CardTitle className="text-base text-muted-foreground md:text-xl">
-          {item.title}
-        </CardTitle>
-      )}
-      <CardContent className="px-0 font-black">{item.content}</CardContent>
-      <item.icon
-        strokeWidth={1}
-        className={cn(
-          "absolute bottom-2 right-2 size-10 fill-muted-foreground/15 text-muted-foreground transition-all group-hover:scale-105 group-hover:text-foreground md:size-12",
-          item.iconClassName,
-        )}
-      />
-    </Card>
   );
 }
