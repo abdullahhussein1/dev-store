@@ -8,7 +8,6 @@ import {
   Home,
   LayoutGrid,
   Search,
-  Settings,
   Settings2,
   ShoppingCart,
   Store,
@@ -61,12 +60,6 @@ const data = {
       name: "Favourites",
       url: "/dashboard/favourites",
       icon: Heart,
-    },
-
-    {
-      name: "Settings",
-      url: "/dashboard/settings",
-      icon: Settings,
     },
   ],
   filters: [
