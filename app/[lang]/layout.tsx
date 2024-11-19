@@ -1,18 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { Locale } from "@/types/types";
 
 export const metadata: Metadata = {
   title: {
@@ -49,15 +40,21 @@ export const metadata: Metadata = {
   classification: "Developer Essentials",
 };
 
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "ku" }];
+}
+
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang: Locale };
 }>) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

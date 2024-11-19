@@ -1,5 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
+export type Locale = "en" | "ku";
+
 export enum ItemFeatureType {
   NEW = "New",
   BESTSELLER = "Bestseller",
