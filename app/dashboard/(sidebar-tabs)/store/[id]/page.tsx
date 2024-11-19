@@ -24,7 +24,7 @@ export default async function Page({
   const id = (await params).id;
   const item: Item = itemsData.find((item) => item.id === id)!;
   return (
-    <div className="grid w-full grid-cols-auto-fit-300 rounded-[35px] bg-secondary/50 p-3 backdrop-blur-xl">
+    <div className="grid w-full grid-cols-auto-fit-300 rounded-[35px] border-2 border-secondary bg-secondary/30 p-3 backdrop-blur-xl hover:bg-secondary/50 dark:border-secondary/40 dark:bg-secondary/20 dark:hover:bg-secondary/30">
       <Carousel className="max-h-min">
         <CarouselContent>
           {item.images.map((image, index) => (

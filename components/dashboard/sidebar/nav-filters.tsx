@@ -59,7 +59,7 @@ export function NavFilters({
         )}
       >
         <SidebarGroupLabel>Filters</SidebarGroupLabel>
-        <SidebarMenu className="rounded-3xl border-2 border-sidebar-accent bg-sidebar-accent/50 p-2">
+        <SidebarMenu className="rounded-3xl border-2 border-secondary bg-secondary/40 p-2 dark:border-secondary/40 dark:bg-secondary/20">
           {items.map((item) => (
             <Collapsible
               key={item.title}
