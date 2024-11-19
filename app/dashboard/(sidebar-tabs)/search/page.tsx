@@ -14,6 +14,7 @@ export default function Page() {
       <h1 className="text-2xl font-bold">Search</h1>
       <div className="relative mx-auto mb-3 flex w-full max-w-2xl items-center">
         <Input
+          autoFocus
           value={input}
           onChange={(e) => {
             setInput(e.target.value);
