@@ -1,4 +1,5 @@
 import { AppSidebar } from "@/components/dashboard/sidebar/app-sidebar";
+import { Button } from "@/components/ui/button";
 import DotPattern from "@/components/ui/dot-pattern";
 
 import {
@@ -6,8 +7,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Separator } from "@radix-ui/react-separator";
-import { Search } from "lucide-react";
+import { Inbox, Search } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -27,11 +27,8 @@ export default function Layout({
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="sticky top-0 z-50 flex shrink-0 items-center gap-2 bg-background/90 p-4 backdrop-blur-xl transition-[width,height] ease-linear">
-          <div className="flex items-center gap-2">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-          </div>
+        <header className="sticky top-0 z-50 flex shrink-0 items-center justify-between gap-5 bg-background/90 p-4 backdrop-blur-xl transition-[width,height] ease-linear">
+          <SidebarTrigger />
           <Link
             href="/dashboard/search"
             className="relative flex max-w-lg flex-1 rounded-[11px] border bg-secondary/20 px-2 py-1 ps-9 text-sm text-muted-foreground/80 transition-colors hover:bg-secondary/40"
@@ -41,6 +38,13 @@ export default function Layout({
               <Search className="size-4" />
             </div>
           </Link>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="size-7 text-accent-foreground/90"
+          >
+            <Inbox />
+          </Button>
         </header>
         <main className="z-30 flex h-fit p-4 pt-2">{children}</main>
         <DotPattern className="opacity-20 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
