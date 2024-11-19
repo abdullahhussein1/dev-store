@@ -8,10 +8,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="grid h-fit w-full grid-cols-auto-fit-300 gap-4">
-      {itemsData.map((item) => (
-        <ItemCart key={item.title} item={item} />
-      ))}
+    <div className="flex flex-col gap-3">
+      <h1 className="text-2xl font-bold">Store</h1>
+      <div className="grid h-fit w-full grid-cols-auto-fit-300 gap-4">
+        {itemsData.map((item) => (
+          <ItemCart key={item.title} item={item} />
+        ))}
+      </div>
     </div>
   );
 }
