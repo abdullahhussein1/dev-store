@@ -20,14 +20,17 @@ export default function HeroSection() {
           Shopping Experience.
           <Link href="/dashboard">
             <ShinyButton>
-              Get Started <ArrowRight />
+              Get Started
+              <div className="rtl:rotate-180">
+                <ArrowRight />
+              </div>
             </ShinyButton>
           </Link>
         </BlurFade>
       </div>
       <BlurFade className="w-full" delay={0.5}>
         <ShineBorder
-          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 select-none p-0 text-center text-2xl font-bold capitalize"
+          className="relative mx-4 h-fit w-fit translate-x-[40%] -rotate-[10deg] skew-x-[20deg] scale-150 select-none p-0 text-center text-2xl font-bold capitalize rtl:-translate-x-[40%] rtl:rotate-[10deg] rtl:skew-x-[-20deg]"
           duration={30}
           color="#999"
         >
@@ -46,7 +49,7 @@ export default function HeroSection() {
             className="rounded-[8px] object-cover dark:hidden"
           />
           <div className="absolute -bottom-1 -start-1 h-full w-full bg-gradient-to-b from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
-          <div className="absolute h-full w-full bg-gradient-to-r from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
+          <div className="absolute h-full w-full bg-gradient-to-r from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background rtl:bg-gradient-to-l" />
         </ShineBorder>
       </BlurFade>
     </section>
