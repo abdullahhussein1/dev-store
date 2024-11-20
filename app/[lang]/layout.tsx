@@ -44,15 +44,16 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ku" }];
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }>) {
+  const lang = (await params).lang;
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
