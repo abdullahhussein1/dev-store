@@ -7,6 +7,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Locale } from "@/types/types";
 import { Inbox, Search } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -18,14 +19,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Layout({
+export default async function Layout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: Locale }>;
 }>) {
+  const lang = (await params).lang;
+
   return (
-    <SidebarProvider>
-      <AppSidebar />
+    <SidebarProvider dir={lang == "en" ? "ltr" : "rtl"}>
+      <AppSidebar side={lang == "en" ? "left" : "right"} />
       <SidebarInset>
         <header className="sticky top-0 z-50 flex shrink-0 items-center justify-between gap-5 bg-background/90 p-4 backdrop-blur-xl transition-[width,height] ease-linear">
           <SidebarTrigger />
