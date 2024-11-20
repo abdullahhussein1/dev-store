@@ -26,7 +26,7 @@ export default function ItemCart({ item }: { item: Item }) {
       <Button
         size="icon"
         variant="outline"
-        className="absolute right-2 top-2 aspect-square size-7 rounded-full bg-secondary/40 text-foreground/30 backdrop-blur-md transition-all"
+        className="absolute end-2 top-2 aspect-square size-7 rounded-full bg-secondary/40 text-foreground/30 backdrop-blur-md transition-all"
       >
         <Heart />
       </Button>

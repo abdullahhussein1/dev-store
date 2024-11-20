@@ -45,7 +45,7 @@ export default function HeroSection() {
             alt="dashboard - light"
             className="rounded-[8px] object-cover dark:hidden"
           />
-          <div className="absolute -bottom-1 -left-1 h-full w-full bg-gradient-to-b from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
+          <div className="absolute -bottom-1 -start-1 h-full w-full bg-gradient-to-b from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
           <div className="absolute h-full w-full bg-gradient-to-r from-transparent from-25% via-secondary via-80% to-secondary dark:via-background dark:to-background" />
         </ShineBorder>
       </BlurFade>

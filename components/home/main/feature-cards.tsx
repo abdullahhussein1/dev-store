@@ -78,7 +78,7 @@ export function FeatureCards() {
           Designed to Enhance Your Journey, Every Step of the Way.
         </BlurFade>
       </div>
-      <div className="relative mr-auto flex w-full max-w-[80vw] items-center md:max-w-2xl lg:max-w-screen-md">
+      <div className="relative me-auto flex w-full max-w-[80vw] items-center md:max-w-2xl lg:max-w-screen-md">
         <Carousel
           opts={{
             align: "center",
@@ -107,7 +107,7 @@ export function FeatureCards() {
             <CarouselNext />
           </BlurFade>
         </Carousel>
-        <div className="absolute -right-2 top-0 z-10 h-full w-6 bg-background/80 blur-md" />
+        <div className="absolute -end-2 top-0 z-10 h-full w-6 bg-background/80 blur-md" />
       </div>
       <div className="absolute h-[750px] w-[100vw] bg-gradient-to-b from-transparent via-background via-70% to-transparent dark:via-secondary/25 md:h-[850px]" />
     </div>

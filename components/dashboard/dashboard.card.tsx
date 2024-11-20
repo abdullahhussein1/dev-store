@@ -29,7 +29,7 @@ export default function DashboardCard({
       <item.icon
         strokeWidth={1}
         className={cn(
-          "absolute bottom-2 right-2 size-10 fill-muted-foreground/15 text-muted-foreground transition-all group-hover:scale-105 group-hover:text-foreground md:size-12",
+          "absolute bottom-2 end-2 size-10 fill-muted-foreground/15 text-muted-foreground transition-all group-hover:scale-105 group-hover:text-foreground md:size-12",
           item.iconClassName,
         )}
       />

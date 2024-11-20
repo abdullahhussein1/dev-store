@@ -27,7 +27,6 @@ export default async function Layout({
   params: Promise<{ lang: Locale }>;
 }>) {
   const lang = (await params).lang;
-
   return (
     <SidebarProvider dir={lang == "en" ? "ltr" : "rtl"}>
       <AppSidebar side={lang == "en" ? "left" : "right"} />
