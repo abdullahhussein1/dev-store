@@ -1,4 +1,22 @@
 {
-  "welcome": "Welcome to our website",
-  "description": "This is a bilingual website in English and Kurdish."
+  "heroSection": {
+    "title": "Power Your Coding Journey",
+    "description": "Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience."
+  },
+  "featureCards": {
+    "title": "Crafted for Today's Developers",
+    "description": "Designed to Enhance Your Journey, Every Step of the Way.",
+    "cardTitles": [
+      "All-in-One Marketplace",
+      "Top-Tier Security",
+      "Lightning-Fast Performance",
+      "Community-Driven",
+      "Global Reach",
+      "24/7 Availability"
+    ]
+  },
+  "stacks": {
+    "title": "Powered by Top-Tier Technology",
+    "description": "Utilizing cutting-edge technologies for a seamless and high-performance shopping experience."
+  }
 }
