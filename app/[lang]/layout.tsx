@@ -3,9 +3,9 @@ import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Locale } from "@/types/types";
 import { LanguageProvider } from "../../context/language-context";
 import { getDictionary } from "../../i18n/dictionaries";
+import { Locale } from "@/types/language-types";
 
 export const metadata: Metadata = {
   title: {
