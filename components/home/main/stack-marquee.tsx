@@ -6,6 +6,7 @@ import BlurFade from "@/components/ui/blur-fade";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
 import GridPattern from "@/components/ui/grid-pattern";
+import { useLanguage } from "@/i18n/context/language-context";
 
 interface StackImage {
   src: string;
@@ -65,6 +66,7 @@ export function StackMarquee() {
     ],
     [],
   );
+  const { dict } = useLanguage();
 
   return (
     <div
@@ -73,15 +75,14 @@ export function StackMarquee() {
     >
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
-          Powered by Top-Tier Technology
+          {dict.stacksTitle}
         </BlurFade>
         <BlurFade
           delay={0.1}
           className="z-10 font-medium text-foreground/50 md:text-xl"
           inView
         >
-          Utilizing cutting-edge technologies for a seamless and
-          high-performance shopping experience.
+          {dict.stacksDescription}
         </BlurFade>
       </div>
       <GridPattern

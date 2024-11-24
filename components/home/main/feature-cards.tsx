@@ -1,4 +1,4 @@
-import * as React from "react";
+"use client";
 
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
@@ -18,49 +18,20 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import { useLanguage } from "@/i18n/context/language-context";
 
-type Feature = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-};
-
-const featuresItems: Feature[] = [
-  {
-    title: "All-in-One Marketplace",
-    description: "Find everything you need in one convenient location.",
-    icon: ShoppingCart,
-  },
-  {
-    title: "Top-Tier Security",
-    description:
-      "Your data and transactions are protected with state-of-the-art security measures.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Lightning-Fast Performance",
-    description: "Experience blazing speeds with our optimized platform.",
-    icon: Zap,
-  },
-  {
-    title: "Community-Driven",
-    description: "Join a thriving community of users and sellers.",
-    icon: Users,
-  },
-  {
-    title: "Global Reach",
-    description: "Connect with customers and sellers from around the world.",
-    icon: Globe,
-  },
-  {
-    title: "24/7 Availability",
-    description:
-      "Shop or sell anytime, day or night, with round-the-clock access.",
-    icon: Clock,
-  },
+const featuresItems: LucideIcon[] = [
+  ShoppingCart,
+  ShieldCheck,
+  Zap,
+  Users,
+  Globe,
+  Clock,
 ];
 
 export function FeatureCards() {
+  const { dict } = useLanguage();
+
   return (
     <div
       id="features"
@@ -68,14 +39,14 @@ export function FeatureCards() {
     >
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
-          Crafted for Today's Developers
+          {dict.featureTitle}
         </BlurFade>
         <BlurFade
           delay={0.1}
           className="z-10 font-medium text-foreground/50 md:text-lg"
           inView
         >
-          Designed to Enhance Your Journey, Every Step of the Way.
+          {dict.featureDescription}
         </BlurFade>
       </div>
       <div className="relative me-auto flex w-full max-w-[80vw] items-center md:max-w-2xl lg:max-w-screen-md">
@@ -87,17 +58,20 @@ export function FeatureCards() {
         >
           <BlurFade delay={0.2} inView>
             <CarouselContent>
-              {featuresItems.map((item) => (
-                <CarouselItem key={item.title} className="group transition-all">
+              {featuresItems.map((Icon, index) => (
+                <CarouselItem
+                  key={dict[`featureCard${index + 1}`]}
+                  className="group transition-all"
+                >
                   <Card className="flex h-[350px] w-[300px] flex-col gap-3 overflow-clip rounded-[35px] border-none bg-secondary p-3 pb-1 group-hover:bg-secondary/60 dark:bg-background dark:group-hover:bg-background/70">
                     <CardContent className="flex flex-1 items-center justify-center rounded-3xl p-2">
-                      <item.icon
+                      <Icon
                         strokeWidth={1.5}
                         className="size-24 fill-background/80 text-foreground/80 transition-all group-hover:text-foreground/90 dark:fill-secondary/80"
                       />
                     </CardContent>
                     <CardFooter className="flex items-center justify-between text-xl font-medium text-foreground/80 group-hover:text-foreground/90">
-                      <p>{item.title}</p>
+                      <p>{dict[`featureCard${index + 1}`]}</p>
                     </CardFooter>
                   </Card>
                 </CarouselItem>

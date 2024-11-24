@@ -1,26 +1,29 @@
+"use client";
+
 import BlurFade from "@/components/ui/blur-fade";
 import ShineBorder from "@/components/ui/shine-border";
 import ShinyButton from "@/components/ui/shiny-button";
+import { useLanguage } from "@/i18n/context/language-context";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
+  const { dict } = useLanguage();
   return (
     <section className="flex flex-col gap-20 md:gap-28">
       <div className="flex w-full flex-col items-start gap-4">
         <BlurFade className="text-5xl font-bold lg:text-6xl">
-          Power Your Coding Journey
+          {dict.heroTitle}
         </BlurFade>
         <BlurFade
           className="flex flex-col gap-6 font-medium text-foreground/60 lg:text-xl"
           delay={0.25}
         >
-          Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric
-          Shopping Experience.
+          {dict.heroDescription}
           <Link href="/dashboard">
             <ShinyButton>
-              Get Started
+              {dict.heroButton}
               <div className="rtl:rotate-180">
                 <ArrowRight />
               </div>
