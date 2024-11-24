@@ -18,7 +18,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import { useLanguage } from "@/i18n/context/language-context";
+import { useLanguage } from "@/hooks/use-language";
 
 const featuresItems: LucideIcon[] = [
   ShoppingCart,

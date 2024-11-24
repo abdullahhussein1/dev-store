@@ -6,7 +6,7 @@ import BlurFade from "@/components/ui/blur-fade";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
 import GridPattern from "@/components/ui/grid-pattern";
-import { useLanguage } from "@/i18n/context/language-context";
+import { useLanguage } from "@/hooks/use-language";
 
 interface StackImage {
   src: string;

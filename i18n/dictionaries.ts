@@ -1,4 +1,5 @@
-import { Locale } from "@/types/language-types";
+import "server-only";
+import type { Locale } from "@/types/language-types";
 
 const dictionaries = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),

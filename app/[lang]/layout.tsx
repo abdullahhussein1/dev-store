@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Locale } from "@/types/types";
-import { LanguageProvider } from "../../i18n/context/language-context";
+import { LanguageProvider } from "../../context/language-context";
 import { getDictionary } from "../../i18n/dictionaries";
 
 export const metadata: Metadata = {

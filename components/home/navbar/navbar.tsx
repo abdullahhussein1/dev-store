@@ -3,6 +3,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { GithubButton } from "@/components/github-icon";
 import DevStoreLogoType from "@/components/dev-store-logotype";
 import NavMenuDrawerButton from "./nav-menu-drawer-button";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export default function Navbar() {
   return (
@@ -10,6 +11,7 @@ export default function Navbar() {
       <DevStoreLogoType />
       <NavMenu />
       <div className="flex items-center gap-4">
+        <LanguageSwitcher />
         <ThemeSwitcher />
         <GithubButton />
         <NavMenuDrawerButton />

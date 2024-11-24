@@ -3,7 +3,7 @@
 import BlurFade from "@/components/ui/blur-fade";
 import ShineBorder from "@/components/ui/shine-border";
 import ShinyButton from "@/components/ui/shiny-button";
-import { useLanguage } from "@/i18n/context/language-context";
+import { useLanguage } from "@/hooks/use-language";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
