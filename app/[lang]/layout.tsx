@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Locale } from "@/types/types";
+import { LanguageProvider } from "../../i18n/context/language-context";
+import { getDictionary } from "../../i18n/dictionaries";
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +54,7 @@ export default async function RootLayout({
   params: Promise<{ lang: Locale }>;
 }>) {
   const lang = (await params).lang;
+  const dict = await getDictionary(lang);
   return (
     <html lang={lang} dir={lang == "en" ? "ltr" : "rtl"}>
       <body
@@ -63,7 +66,9 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <LanguageProvider lang={lang} dict={dict}>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
