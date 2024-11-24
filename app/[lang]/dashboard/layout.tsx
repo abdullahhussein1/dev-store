@@ -7,7 +7,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Locale } from "@/types/types";
+import { Locale } from "@/types/language-types";
 import { Inbox, Search } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
