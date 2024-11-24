@@ -13,55 +13,15 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { ChevronUp } from "lucide-react";
-
-interface Component {
-  title: string;
-  href: string;
-  description: string;
-}
-
-const components: Component[] = [
-  {
-    title: "Marketplace",
-    href: "/features/marketplace",
-    description:
-      "An all-in-one platform where users can browse, buy, and sell products or services.",
-  },
-  {
-    title: "Security",
-    href: "/features/security",
-    description:
-      "Top-tier protection measures to ensure the safety of user data and transactions.",
-  },
-  {
-    title: "Performance",
-    href: "/features/performance",
-    description:
-      "Lightning-fast response times and optimized processes for a smooth user experience.",
-  },
-  {
-    title: "Community",
-    href: "/features/community",
-    description:
-      "A thriving ecosystem of users, fostering engagement and collaboration.",
-  },
-  {
-    title: "Global Reach",
-    href: "/features/global-reach",
-    description:
-      "Expand your horizons with worldwide accessibility and multi-language support.",
-  },
-  {
-    title: "24/7 Availability",
-    href: "/features/availability",
-    description:
-      "Round-the-clock access to services, ensuring convenience for users in all time zones.",
-  },
-];
+import { useLanguage } from "@/hooks/use-language";
 
 export function NavMenu() {
+  const { dict, lang } = useLanguage();
   return (
-    <NavigationMenu className="hidden md:block">
+    <NavigationMenu
+      className="hidden md:block"
+      dir={lang == "en" ? "ltr" : "rtl"}
+    >
       <NavigationMenuList>
         <NavigationMenuItem className="text-foreground/70 hover:text-foreground">
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -97,14 +57,20 @@ export function NavMenu() {
           <NavigationMenuTrigger>Features</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+              {dict.features.cards.map((card) => (
+                <div
+                  key={card.title}
+                  className={cn(
+                    "block select-none space-y-1 rounded-2xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                  )}
                 >
-                  {component.description}
-                </ListItem>
+                  <div className="text-sm font-medium leading-none">
+                    {card.title}
+                  </div>
+                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                    {card.description}
+                  </p>
+                </div>
               ))}
             </ul>
           </NavigationMenuContent>
