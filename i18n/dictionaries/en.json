@@ -1,15 +1,41 @@
 {
-  "heroTitle": "Power Your Coding Journey",
-  "heroDescription": "Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
-  "heroButton": "Get Started",
-  "featureTitle": "Crafted for Today's Developers",
-  "featureDescription": "Designed to Enhance Your Journey, Every Step of the Way.",
-  "featureCard1": "All-in-One Marketplace",
-  "featureCard2": "Top-Tier Security",
-  "featureCard3": "Lightning-Fast Performance",
-  "featureCard4": "Community-Driven",
-  "featureCard5": "Global Reach",
-  "featureCard6": "24/7 Availability",
-  "stacksTitle": "Powered by Top-Tier Technology",
-  "stacksDescription": "Utilizing cutting-edge technologies for a seamless and high-performance shopping experience."
+  "hero": {
+    "title": "Power Your Coding Journey",
+    "description": "Dev Store is Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
+    "ctaButton": "Get Started"
+  },
+  "features": {
+    "mainTitle": "Crafted for Today's Developers",
+    "mainDescription": "Designed to Enhance Your Journey, Every Step of the Way.",
+    "cards": [
+      {
+        "title": "All-in-One Marketplace",
+        "description": "Everything you need, all in one place."
+      },
+      {
+        "title": "Top-Tier Security",
+        "description": "Your data and transactions are always protected."
+      },
+      {
+        "title": "Lightning-Fast Performance",
+        "description": "Optimized for speed and efficiency."
+      },
+      {
+        "title": "Community-Driven",
+        "description": "Built by developers, for developers."
+      },
+      {
+        "title": "Global Reach",
+        "description": "Connect with developers worldwide."
+      },
+      {
+        "title": "24/7 Availability",
+        "description": "Shop anytime, from anywhere."
+      }
+    ]
+  },
+  "techStack": {
+    "title": "Powered by Top-Tier Technology",
+    "description": "Utilizing cutting-edge technologies for a seamless and high-performance shopping experience."
+  }
 }

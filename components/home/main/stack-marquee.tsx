@@ -75,14 +75,14 @@ export function StackMarquee() {
     >
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
-          {dict.stacksTitle}
+          {dict.techStack.title}
         </BlurFade>
         <BlurFade
           delay={0.1}
           className="z-10 font-medium text-foreground/50 md:text-xl"
           inView
         >
-          {dict.stacksDescription}
+          {dict.techStack.description}
         </BlurFade>
       </div>
       <GridPattern

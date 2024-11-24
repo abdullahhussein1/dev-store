@@ -39,14 +39,14 @@ export function FeatureCards() {
     >
       <div className="flex w-full flex-col gap-2">
         <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
-          {dict.featureTitle}
+          {dict.features.mainTitle}
         </BlurFade>
         <BlurFade
           delay={0.1}
           className="z-10 font-medium text-foreground/50 md:text-lg"
           inView
         >
-          {dict.featureDescription}
+          {dict.features.mainDescription}
         </BlurFade>
       </div>
       <div className="relative me-auto flex w-full max-w-[80vw] items-center md:max-w-2xl lg:max-w-screen-md">
@@ -61,7 +61,7 @@ export function FeatureCards() {
             <CarouselContent>
               {featuresItems.map((Icon, index) => (
                 <CarouselItem
-                  key={dict[`featureCard${index + 1}`]}
+                  key={dict.features.cards[index].title}
                   className="group transition-all"
                 >
                   <Card className="flex h-[350px] w-[300px] flex-col gap-3 overflow-clip rounded-[35px] border-none bg-secondary p-3 pb-1 group-hover:bg-secondary/60 dark:bg-background dark:group-hover:bg-background/70">
@@ -72,7 +72,7 @@ export function FeatureCards() {
                       />
                     </CardContent>
                     <CardFooter className="flex items-center justify-between text-xl font-medium text-foreground/80 group-hover:text-foreground/90">
-                      <p>{dict[`featureCard${index + 1}`]}</p>
+                      <p>{dict.features.cards[index].title}</p>
                     </CardFooter>
                   </Card>
                 </CarouselItem>

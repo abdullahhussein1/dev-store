@@ -14,16 +14,16 @@ export default function HeroSection() {
     <section className="flex flex-col gap-20 md:gap-28">
       <div className="flex w-full flex-col items-start gap-4">
         <BlurFade className="text-5xl font-bold lg:text-6xl">
-          {dict.heroTitle}
+          {dict.hero.title}
         </BlurFade>
         <BlurFade
           className="flex flex-col gap-6 font-medium text-foreground/60 lg:text-xl"
           delay={0.25}
         >
-          {dict.heroDescription}
+          {dict.hero.description}
           <Link href="/dashboard">
             <ShinyButton>
-              {dict.heroButton}
+              {dict.hero.ctaButton}
               <div className="rtl:rotate-180">
                 <ArrowRight />
               </div>
