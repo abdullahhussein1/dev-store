@@ -3,7 +3,7 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import MenuIcon from "@/components/menu-icon";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Layers2, Star, Terminal } from "lucide-react";
+import { Layers2, Star, ChevronUp } from "lucide-react";
 
 export default function NavMenuDrawerButton() {
   const isMobile = useIsMobile();
@@ -28,7 +28,7 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 
 const features = [
   {
-    Icon: Terminal,
+    Icon: ChevronUp,
     name: "Dev Store",
     href: "/",
     description:

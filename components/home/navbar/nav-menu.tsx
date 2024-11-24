@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Terminal } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 
 interface Component {
   title: string;
@@ -73,7 +73,7 @@ export function NavMenu() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-2xl bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <Terminal className="h-6 w-6" />
+                    <ChevronUp className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Dev Store
                     </div>
