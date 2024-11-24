@@ -1,4 +1,3 @@
-import DevStoreLogoType from "@/components/dev-store-logotype";
 import { Terminal } from "lucide-react";
 import React from "react";
 
