@@ -30,7 +30,7 @@ const featuresItems: LucideIcon[] = [
 ];
 
 export function FeatureCards() {
-  const { dict } = useLanguage();
+  const { lang, dict } = useLanguage();
 
   return (
     <div
@@ -53,6 +53,7 @@ export function FeatureCards() {
         <Carousel
           opts={{
             align: "center",
+            direction: lang == "en" ? "ltr" : "rtl",
           }}
           className="z-10 w-full max-w-[80vw] md:max-w-2xl lg:max-w-screen-md"
         >
