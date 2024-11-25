@@ -66,7 +66,7 @@ export function StackMarquee() {
     ],
     [],
   );
-  const { dict } = useLanguage();
+  const { lang, dict } = useLanguage();
 
   return (
     <div
@@ -86,16 +86,16 @@ export function StackMarquee() {
         </BlurFade>
       </div>
       <GridPattern
-        width={20}
-        height={20}
-        x={-1}
-        y={-1}
+        width={40}
+        height={40}
         className={cn(
           "opacity-40 [mask-image:linear-gradient(to_bottom_right,transparent,white,transparent)] dark:opacity-20",
         )}
       />
       <BlurFade delay={0.2} inView>
         <Marquee
+          dir="ltr"
+          reverse={lang !== "en"}
           className={`max-w-[80vw] select-none [--duration:20s] md:max-w-screen-sm lg:max-w-screen-md`}
         >
           {stackImages.map((image, index) => (
@@ -135,8 +135,8 @@ export function StackMarquee() {
           </div>
         </Marquee>
       </BlurFade>
-      <div className="pointer-events-none absolute inset-y-0 start-0 w-1/6 bg-gradient-to-r from-secondary dark:from-background" />
-      <div className="pointer-events-none absolute inset-y-0 end-0 w-1/6 bg-gradient-to-l from-secondary dark:from-background" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-secondary dark:from-background" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-secondary dark:from-background" />
     </div>
   );
 }
