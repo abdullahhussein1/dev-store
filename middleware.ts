@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { match } from "@formatjs/intl-localematcher";
+import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 let locales = ["en", "ku"];
@@ -10,11 +10,16 @@ function getLocale(request: NextRequest): string {
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-  return match(languages, locales, defaultLocale);
+  return matchLocale(languages, locales, defaultLocale);
 }
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  if (isPublicFile(pathname)) {
+    return NextResponse.next();
+  }
+
   const pathnameIsMissingLocale = locales.every(
     (locale) =>
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
@@ -26,6 +31,25 @@ export function middleware(request: NextRequest) {
   }
 }
 
+function isPublicFile(pathname: string): boolean {
+  const publicFileExtensions = [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".gif",
+    ".svg",
+    ".ico",
+    ".css",
+    ".js",
+  ];
+  const publicFolders = ["/images/", "/fonts/", "/videos/"];
+
+  return (
+    publicFileExtensions.some((ext) => pathname.endsWith(ext)) ||
+    publicFolders.some((folder) => pathname.startsWith(folder))
+  );
+}
+
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!_next).*)"],
 };
