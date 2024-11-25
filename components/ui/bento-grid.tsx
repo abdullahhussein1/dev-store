@@ -22,13 +22,13 @@ const BentoGrid = ({
 };
 
 const BentoCard = ({
-  name,
+  title,
   className,
   Icon,
   description,
   href,
 }: {
-  name: string;
+  title: string;
   className?: string;
   Icon: any;
   href: string;
@@ -36,10 +36,9 @@ const BentoCard = ({
 }) => (
   <Link
     href={href}
-    key={name}
     draggable="false"
     className={cn(
-      "group relative col-span-1 flex select-none flex-col justify-between overflow-hidden rounded-[35px] backdrop-blur-md",
+      "group relative col-span-1 flex aspect-square select-none flex-col justify-between overflow-hidden rounded-[45px] backdrop-blur-md",
       // light styles
       "bg-background/70 font-semibold text-foreground/90 hover:text-foreground",
       // dark styles
@@ -47,11 +46,11 @@ const BentoCard = ({
       className,
     )}
   >
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-4 transition-all duration-300">
+    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-5 transition-all duration-300">
       <div className="flex size-8 items-center justify-center rounded-sm border bg-secondary/70 p-1 dark:bg-secondary/40 sm:size-11">
         <Icon className="size-5 fill-background/70 sm:size-8" />
       </div>
-      <h3 className="text-sm sm:text-xl">{name}</h3>
+      <h3 className="text-sm sm:text-xl">{title}</h3>
       <p className="text-xs text-foreground/60 sm:text-sm">{description}</p>
     </div>
   </Link>

@@ -37,5 +37,22 @@
   "techStack": {
     "title": "Powered by Top-Tier Technology",
     "description": "Utilizing cutting-edge technologies for a seamless and high-performance shopping experience."
-  }
+  },
+  "navbar": [
+    {
+      "title": "Dev Store",
+      "description": "Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
+      "href": "/"
+    },
+    {
+      "title": "Features",
+      "description": "Explore the powerful capabilities of our developer tools.",
+      "href": "#features"
+    },
+    {
+      "title": "Stacks",
+      "description": "Discover the cutting-edge technologies powering our products.",
+      "href": "#stacks"
+    }
+  ]
 }

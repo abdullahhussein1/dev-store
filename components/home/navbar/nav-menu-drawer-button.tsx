@@ -3,7 +3,7 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import MenuIcon from "@/components/menu-icon";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Layers2, Star, ChevronUp } from "lucide-react";
+import { Layers2, Star, ChevronUp, LucideIcon } from "lucide-react";
 
 export default function NavMenuDrawerButton() {
   const isMobile = useIsMobile();
@@ -13,11 +13,11 @@ export default function NavMenuDrawerButton() {
       <MenuIcon className="size-6 text-foreground/50 hover:text-foreground md:hidden" />
     );
   return (
-    <Drawer>
+    <Drawer direction="top">
       <DrawerTrigger className="md:hidden">
         <MenuIcon className="size-6 text-foreground/50 hover:text-foreground" />
       </DrawerTrigger>
-      <DrawerContent className="p-5">
+      <DrawerContent className="top-0 mb-10 mt-0 p-5">
         <MenuList />
       </DrawerContent>
     </Drawer>
@@ -25,38 +25,16 @@ export default function NavMenuDrawerButton() {
 }
 
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-
-const features = [
-  {
-    Icon: ChevronUp,
-    name: "Dev Store",
-    href: "/",
-    description:
-      "Crafted for a Fast, Intuitive, and Developer-Centric Shopping Experience.",
-    className: "aspect-square",
-  },
-  {
-    Icon: Star,
-    name: "Features",
-    href: "#features",
-    description: "Explore the powerful capabilities of our developer tools.",
-    className: "aspect-square",
-  },
-  {
-    Icon: Layers2,
-    href: "#stacks",
-    name: "Stacks",
-    description:
-      "Discover the cutting-edge technologies powering our products.",
-    className: "col-span-2",
-  },
-];
+import { useLanguage } from "@/hooks/use-language";
 
 export function MenuList() {
+  const { dict } = useLanguage();
+  const navbarIcons: LucideIcon[] = [ChevronUp, Star, Layers2];
+
   return (
     <BentoGrid>
-      {features.map((feature) => (
-        <BentoCard key={feature.name} {...feature} />
+      {dict.navbar.map((feature, i) => (
+        <BentoCard key={feature.title} {...feature} Icon={navbarIcons[i]} />
       ))}
     </BentoGrid>
   );

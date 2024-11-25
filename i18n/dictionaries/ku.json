@@ -37,5 +37,22 @@
   "techStack": {
     "title": "بە تەکنەلۆژیای پێشکەوتوو بەهێزکراوە",
     "description": "بەکارهێنانی تەکنەلۆژیای پێشکەوتوو بۆ ئەزموونێکی کڕینی بێ کێشە و کارایی بەرز."
-  }
+  },
+  "navbar": [
+    {
+      "title": "دێڤ ستۆر",
+      "description": "بۆ ئەزموونێکی کڕینی خێرا، ئاسان و تایبەت بە گەشەپێدەران دروستکراوە.",
+      "href": "/"
+    },
+    {
+      "title": "Features",
+      "description": "Explore the powerful capabilities of our developer tools.",
+      "href": "#features"
+    },
+    {
+      "title": "Stacks",
+      "description": "Discover the cutting-edge technologies powering our products.",
+      "href": "#stacks"
+    }
+  ]
 }

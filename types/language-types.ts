@@ -18,6 +18,11 @@ export interface Dictionary {
     title: string;
     description: string;
   };
+  navbar: Array<{
+    title: string;
+    description: string;
+    href: string;
+  }>;
 }
 
 export interface LanguageContextType {
