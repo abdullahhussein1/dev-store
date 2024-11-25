@@ -22,6 +22,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
 
   return (
     <div
+      dir="ltr"
       className={cn(
         "flex h-fit w-fit items-center rounded-full border bg-secondary/30 text-foreground/60 group-hover:bg-background",
         className,

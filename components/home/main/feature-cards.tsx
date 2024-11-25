@@ -37,13 +37,13 @@ export function FeatureCards() {
       id="features"
       className="relative flex w-full flex-col items-center justify-center gap-8 pb-8 md:gap-12"
     >
-      <div className="flex w-full flex-col gap-2">
-        <BlurFade className="z-10 text-4xl font-bold md:text-5xl" inView>
+      <div className="flex w-full flex-col gap-4">
+        <BlurFade className="z-10 text-4xl font-bold lg:text-5xl" inView>
           {dict.features.mainTitle}
         </BlurFade>
         <BlurFade
           delay={0.1}
-          className="z-10 font-medium text-foreground/50 md:text-lg"
+          className="z-10 font-medium text-foreground/50 lg:text-lg"
           inView
         >
           {dict.features.mainDescription}

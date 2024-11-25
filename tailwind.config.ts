@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
+        bahij: ["var(--font-bahij)"],
+      },
       gridTemplateColumns: {
         "auto-fill-300": "repeat(auto-fill, minmax(360px, 1fr))",
         "auto-fit-300": "repeat(auto-fit, minmax(370px, 1fr))",

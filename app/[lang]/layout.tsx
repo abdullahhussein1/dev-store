@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { LanguageProvider } from "../../context/language-context";
@@ -42,6 +43,36 @@ export const metadata: Metadata = {
   classification: "Developer Essentials",
 };
 
+const bahij = localFont({
+  variable: "--font-bahij",
+  src: [
+    {
+      path: "../../fonts/bahij/Bahij_Light.ttf",
+      weight: "100 200",
+    },
+    {
+      path: "../../fonts/bahij/Bahij_SemiLight.ttf",
+      weight: "300",
+    },
+    {
+      path: "../../fonts/bahij/Bahij_Plain.ttf",
+      weight: "400",
+    },
+    {
+      path: "../../fonts/bahij/Bahij_SemiBold.ttf",
+      weight: "500 600",
+    },
+    {
+      path: "../../fonts/bahij/Bahij_Bold.ttf",
+      weight: "700 800",
+    },
+    {
+      path: "../../fonts/bahij/Bahij_Black.ttf",
+      weight: "900",
+    },
+  ],
+});
+
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ku" }];
 }
@@ -58,7 +89,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} dir={lang == "en" ? "ltr" : "rtl"}>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${bahij.className} antialiased`}
       >
         <ThemeProvider
           attribute="class"
