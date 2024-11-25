@@ -17,7 +17,7 @@ export default function NavMenuDrawerButton() {
       <DrawerTrigger className="md:hidden">
         <MenuIcon className="size-6 text-foreground/50 hover:text-foreground" />
       </DrawerTrigger>
-      <DrawerContent className="top-0 mb-16 mt-0 p-5">
+      <DrawerContent className="top-0 mt-0 p-3">
         <MenuList />
       </DrawerContent>
     </Drawer>
