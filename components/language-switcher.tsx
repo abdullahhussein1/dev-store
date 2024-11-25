@@ -60,7 +60,7 @@ function LanguageButton({
             variant="ghost"
             size="sm"
             className={cn(
-              "aspect-square size-5 rounded-full border border-transparent p-0 text-[9px] transition-all hover:bg-transparent hover:text-foreground",
+              "aspect-square size-5 rounded-full border border-transparent p-0 text-[9px] leading-none transition-all hover:bg-transparent hover:text-foreground",
               isActive && "border-foreground/20 text-foreground",
             )}
             onClick={onClick}

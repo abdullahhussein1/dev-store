@@ -17,7 +17,7 @@ export default function NavMenuDrawerButton() {
       <DrawerTrigger className="md:hidden">
         <MenuIcon className="size-6 text-foreground/50 hover:text-foreground" />
       </DrawerTrigger>
-      <DrawerContent className="top-0 mb-10 mt-0 p-5">
+      <DrawerContent className="top-0 mb-16 mt-0 p-5">
         <MenuList />
       </DrawerContent>
     </Drawer>
@@ -30,11 +30,17 @@ import { useLanguage } from "@/hooks/use-language";
 export function MenuList() {
   const { dict } = useLanguage();
   const navbarIcons: LucideIcon[] = [ChevronUp, Star, Layers2];
+  const classNames: string[] = ["col-span-2", "aspect-square", "aspect-square"];
 
   return (
     <BentoGrid>
       {dict.navbar.map((feature, i) => (
-        <BentoCard key={feature.title} {...feature} Icon={navbarIcons[i]} />
+        <BentoCard
+          key={feature.title}
+          {...feature}
+          Icon={navbarIcons[i]}
+          className={classNames[i]}
+        />
       ))}
     </BentoGrid>
   );

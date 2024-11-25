@@ -86,8 +86,9 @@ export function StackMarquee() {
         </BlurFade>
       </div>
       <GridPattern
-        width={40}
-        height={40}
+        width={50}
+        height={50}
+        y={5}
         className={cn(
           "opacity-40 [mask-image:linear-gradient(to_bottom_right,transparent,white,transparent)] dark:opacity-20",
         )}

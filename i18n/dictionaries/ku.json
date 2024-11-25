@@ -45,14 +45,19 @@
       "href": "/"
     },
     {
-      "title": "Features",
-      "description": "Explore the powerful capabilities of our developer tools.",
+      "title": "تایبەتمەندییەکان",
+      "description": "تایبەتمەندییە بەهێزەکانی ئامرازەکانی گەشەپێدەرانمان بدۆزەرەوە.",
       "href": "#features"
     },
     {
-      "title": "Stacks",
-      "description": "Discover the cutting-edge technologies powering our products.",
+      "title": "تەکنەلۆژیاکان",
+      "description": "ئەو تەکنەلۆژیا پێشکەوتووانە بدۆزەرەوە کە بەرهەمەکانمان بەهێز دەکەن.",
       "href": "#stacks"
     }
-  ]
+  ],
+  "footer": {
+    "copyright": "© ٢٠٢٤",
+    "standsWith": "پشتگیری دەکات لە",
+    "countries": "فەڵەستین 🇵🇸 سودان 🇸🇩 سوریا 🇸🇾"
+  }
 }

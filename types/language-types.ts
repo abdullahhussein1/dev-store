@@ -23,6 +23,11 @@ export interface Dictionary {
     description: string;
     href: string;
   }>;
+  footer: {
+    copyright: string;
+    standsWith: string;
+    countries: string;
+  };
 }
 
 export interface LanguageContextType {

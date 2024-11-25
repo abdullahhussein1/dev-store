@@ -54,5 +54,10 @@
       "description": "Discover the cutting-edge technologies powering our products.",
       "href": "#stacks"
     }
-  ]
+  ],
+  "footer": {
+    "copyright": "© 2024",
+    "standsWith": "Stands with",
+    "countries": "Palestine 🇵🇸 Sudan 🇸🇩 Syria 🇸🇾"
+  }
 }

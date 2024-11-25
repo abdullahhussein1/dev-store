@@ -24,7 +24,9 @@ export function NavMenu() {
     >
       <NavigationMenuList>
         <NavigationMenuItem className="text-foreground/70 hover:text-foreground">
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {lang == "en" ? "Getting Started" : "دەست پێبکە"}
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -35,26 +37,33 @@ export function NavMenu() {
                   >
                     <ChevronUp className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      Dev Store
+                      {dict.navbar[0].title}
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Dev Store is Crafted for a Fast, Intuitive, and
-                      Developer-Centric Shopping Experience.
+                      {dict.navbar[0].description}
                     </p>
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="#features" title="Features">
-                Explore the powerful capabilities of our developer tools.
+              <ListItem
+                href="#features"
+                title={lang == "en" ? "Features" : "تایبەتمەندیەکان"}
+              >
+                {dict.navbar[1].description}
               </ListItem>
-              <ListItem href="#stacks" title="Stacks">
-                Discover the cutting-edge technologies powering our products.
+              <ListItem
+                href="#stacks"
+                title={lang == "en" ? "Stacks" : "تەکنەلۆجیاکان"}
+              >
+                {dict.navbar[2].description}
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="text-foreground/70 hover:text-foreground">
-          <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {lang == "en" ? "Features" : "تایبەتمەندیەکان"}
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {dict.features.cards.map((card) => (
